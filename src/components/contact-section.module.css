@@ -8,9 +8,10 @@
 }
 
 .shell {
-  width: min(1480px, calc(100vw - 48px));
+  width: var(--shell);
+  max-width: 92.5rem;
   margin-inline: auto;
-  padding-block: 88px 96px;
+  padding-block: var(--section-space) var(--section-space);
 }
 
 .intro {
@@ -92,7 +93,7 @@
 
 .stage {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 380px);
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(24px, 4vw, 42px);
   align-items: start;
 }
@@ -100,7 +101,7 @@
 .formCard,
 .infoCard {
   border: 1px solid rgba(13, 18, 64, 0.12);
-  border-radius: 30px;
+  border-radius: var(--radius-soft);
   background: rgba(255, 255, 255, 0.82);
   box-shadow: 0 24px 72px rgba(13, 18, 64, 0.08);
   backdrop-filter: blur(14px);
@@ -109,7 +110,7 @@
 .formCard {
   display: grid;
   gap: 20px;
-  padding: 28px;
+  padding: clamp(1rem, 2vw, 1.75rem);
 }
 
 .formGrid {
@@ -144,8 +145,8 @@
 
 .input {
   width: 100%;
-  min-height: 52px;
-  padding: 0 16px;
+  min-height: 3.25rem;
+  padding: 0 1rem;
   border: 1px solid rgba(13, 18, 64, 0.12);
   border-radius: 18px;
   background: rgba(245, 244, 240, 0.88);
@@ -168,8 +169,8 @@
 }
 
 .textarea {
-  min-height: 160px;
-  padding: 16px;
+  min-height: 10rem;
+  padding: 1rem;
   resize: vertical;
 }
 
@@ -185,8 +186,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 0 18px;
+  min-height: 3rem;
+  padding: 0 1.125rem;
   border-radius: 999px;
   transition:
     transform 180ms ease,
@@ -229,7 +230,7 @@
 .infoCard {
   display: grid;
   gap: 18px;
-  padding: 28px 24px;
+  padding: clamp(1rem, 2vw, 1.75rem);
 }
 
 .infoCardAr {
@@ -298,14 +299,15 @@
   text-underline-offset: 3px;
 }
 
+@media (min-width: 64rem) {
+  .stage {
+    grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 23.75rem);
+  }
+}
+
 @media (max-width: 900px) {
   .shell {
-    width: min(100%, calc(100vw - 24px));
-    padding-block: 70px 72px;
-  }
-
-  .stage {
-    grid-template-columns: 1fr;
+    padding-block: clamp(4rem, 7vw, 4.5rem);
   }
 
   .headline,
@@ -316,11 +318,6 @@
 }
 
 @media (max-width: 640px) {
-  .shell {
-    width: min(100%, calc(100vw - 20px));
-    padding-block: 56px 60px;
-  }
-
   .intro {
     gap: 12px;
     margin-bottom: 22px;
@@ -338,12 +335,11 @@
 
   .formCard,
   .infoCard {
-    border-radius: 22px;
+    border-radius: var(--radius-card);
   }
 
   .formCard {
     gap: 16px;
-    padding: 18px;
   }
 
   .formGrid {
@@ -369,6 +365,5 @@
 
   .infoCard {
     gap: 14px;
-    padding: 18px;
   }
 }

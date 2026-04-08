@@ -5,7 +5,13 @@
   --color-text: #0a0a0a;
   --color-white: #ffffff;
   --color-line: rgba(255, 255, 255, 0.16);
-  --shell: min(1200px, calc(100vw - 40px));
+  --shell-max: 100rem;
+  --shell-inline: clamp(1rem, 1.4vw + 0.7rem, 1.75rem);
+  --section-space: clamp(3.25rem, 6vw, 6rem);
+  --section-space-tight: clamp(2.75rem, 5vw, 5rem);
+  --radius-card: clamp(1rem, 1vw + 0.75rem, 1.75rem);
+  --radius-soft: clamp(1.25rem, 1vw + 1rem, 2rem);
+  --shell: min(var(--shell-max), calc(100vw - (var(--shell-inline) * 2)));
 }
 
 * {
@@ -16,6 +22,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -23,9 +30,11 @@ body {
   background: var(--color-dark);
   color: var(--color-white);
   font-family: var(--font-english-body), Arial, sans-serif;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
 a {
@@ -38,6 +47,7 @@ input,
 textarea,
 select {
   font: inherit;
+  min-width: 0;
 }
 
 img {

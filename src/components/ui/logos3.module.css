@@ -1,6 +1,6 @@
 .section {
   display: grid;
-  gap: 18px;
+  gap: 1rem;
 }
 
 .headingWrap {
@@ -34,15 +34,15 @@
 }
 
 .item {
-  flex: 0 0 33.333%;
+  flex: 0 0 68%;
 }
 
 .logoShell {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80px;
-  padding: 0 10px;
+  min-height: 4rem;
+  padding: 0 0.375rem;
 }
 
 .logoCard {
@@ -52,8 +52,8 @@
   gap: 12px;
   min-height: 58px;
   width: 100%;
-  max-width: 220px;
-  padding: 0 20px;
+  max-width: 13.75rem;
+  padding: 0 1rem;
   border: 1px solid rgba(246, 242, 234, 0.12);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.04);
@@ -72,7 +72,7 @@
 
 .logoLabel {
   color: inherit;
-  font-size: 0.94rem;
+  font-size: 0.88rem;
   font-weight: 500;
   line-height: 1;
   white-space: nowrap;
@@ -99,7 +99,7 @@
 .fadeRight {
   position: absolute;
   inset-block: 0;
-  width: 72px;
+  width: 2.5rem;
   pointer-events: none;
   z-index: 1;
 }
@@ -114,15 +114,15 @@
   background: linear-gradient(270deg, #090f2b 12%, rgba(9, 15, 43, 0));
 }
 
-@media (max-width: 960px) {
+@media (min-width: 40rem) {
   .item {
-    flex-basis: 40%;
+    flex-basis: 45%;
   }
 }
 
-@media (max-width: 760px) {
+@media (min-width: 64rem) {
   .item {
-    flex-basis: 52%;
+    flex-basis: 33.333%;
   }
 }
 
@@ -136,7 +136,7 @@
   }
 
   .item {
-    flex-basis: 70%;
+    flex-basis: 78%;
   }
 
   .logoShell {

@@ -8,9 +8,10 @@
 }
 
 .shell {
-  width: min(1600px, calc(100vw - 48px));
+  width: var(--shell);
+  max-width: 100rem;
   margin-inline: auto;
-  padding-block: 88px 80px;
+  padding-block: var(--section-space) var(--section-space-tight);
 }
 
 .intro {
@@ -94,8 +95,7 @@
 
 @media (max-width: 900px) {
   .shell {
-    width: min(100%, calc(100vw - 24px));
-    padding-block: 68px 60px;
+    padding-block: clamp(3.75rem, 7vw, 4.25rem) clamp(3.25rem, 6vw, 3.75rem);
   }
 
   .intro {
@@ -110,11 +110,6 @@
 }
 
 @media (max-width: 640px) {
-  .shell {
-    width: min(100%, calc(100vw - 20px));
-    padding-block: 54px 50px;
-  }
-
   .intro {
     gap: 10px;
     margin-bottom: 18px;
