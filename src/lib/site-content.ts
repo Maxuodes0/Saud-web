@@ -39,6 +39,7 @@ export const siteContent: Record<SiteLanguage, LocaleContent> = {
     nav: [
       { href: "#home", label: "الرئيسية" },
       { href: "#about", label: "من نحن" },
+      { href: "#projects", label: "مشاريعنا" },
       { href: "#work", label: "الأعمال" },
     ],
     cta: "ابدأ مشروعك",
@@ -51,9 +52,9 @@ export const siteContent: Record<SiteLanguage, LocaleContent> = {
       headline: "من نحن",
       subheadline: "",
       body: [
-        "في SPRINT-S نؤمن أن الرياضة عالم متنوع وألعاب مختلفة وتحديات متجددة وشغف يتجاوز الملعب.",
+        "في SPRINT-S نؤمن أن الرياضة عالم متنوع، وألعاب مختلفة، وتحديات متجددة، وشغف يتجاوز الملعب.",
         "ومن هذا المنطلق، تأسست SPRINT-S لتفعيل قوة الرياضة وتحويلها إلى مشاريع ومبادرات مؤثرة ومستدامة، تُنفّذ وفق حلول مخصّصة لكل جهة.",
-        "نطمح إلى الريادة في سوق التسويق الرياضي عبر تمكين شركائنا من حلول تسويقية رياضية متكاملة، تُدار باحترافية على يد خبراء في التغطيات الرياضية، واستراتيجيات التسويق الرياضي، وصناعة المحتوى الرياضي.",
+        "نطمح إلى الريادة في سوق التسويق الرياضي عبر تمكين شركائنا من حلول تسويقية رياضية متكاملة تُدار باحترافية على يد خبراء في التغطيات الرياضية، واستراتيجيات التسويق الرياضي، وصناعة المحتوى الرياضي.",
       ],
       values: [
         {
@@ -81,6 +82,7 @@ export const siteContent: Record<SiteLanguage, LocaleContent> = {
     nav: [
       { href: "#home", label: "Home" },
       { href: "#about", label: "About" },
+      { href: "#projects", label: "Projects" },
       { href: "#work", label: "Work" },
     ],
     cta: "Start a project",

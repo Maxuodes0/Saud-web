@@ -1,0 +1,55 @@
+.cloud {
+  overflow: hidden;
+  padding-block: 18px;
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
+
+.logoItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 18px;
+  border: 1px solid rgba(246, 242, 234, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(246, 242, 234, 0.88);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  user-select: none;
+}
+
+.logoIcon {
+  display: inline-flex;
+  color: #4db8ff;
+}
+
+.logoLabel {
+  font-size: 0.94rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.logoImage {
+  display: block;
+  height: 20px;
+  width: auto;
+  opacity: 0.92;
+}
+
+@media (max-width: 640px) {
+  .cloud {
+    padding-block: 14px;
+  }
+
+  .logoItem {
+    min-height: 46px;
+    padding: 0 14px;
+    gap: 8px;
+  }
+
+  .logoLabel {
+    font-size: 0.84rem;
+  }
+}

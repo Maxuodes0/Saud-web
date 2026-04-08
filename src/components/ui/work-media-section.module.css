@@ -80,6 +80,51 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
   align-items: start;
+  margin-bottom: 34px;
+}
+
+.clientsBlock {
+  display: grid;
+  gap: 14px;
+}
+
+.clientsHeader {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  text-align: center;
+}
+
+.clientsLabel {
+  color: rgba(246, 242, 234, 0.58);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.clientsLabelAr {
+  font-family: var(--font-arabic-display), sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.clientsTitle {
+  color: rgba(246, 242, 234, 0.94);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.clientsTitleAr {
+  font-family: var(--font-arabic-display), sans-serif;
+}
+
+.clientsDivider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(246, 242, 234, 0.18), transparent);
 }
 
 @media (max-width: 1100px) {
@@ -88,22 +133,26 @@
   }
 }
 
-@media (max-width: 900px) {
-  .shell {
-    width: min(100%, calc(100vw - 24px));
-    padding-block: 66px 56px;
-  }
-
-  .intro {
-    gap: 10px;
-    margin-bottom: 24px;
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
+  .shell {
+    width: min(100%, calc(100vw - 24px));
+    padding-block: 62px 54px;
+  }
+
+  .intro {
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
   .grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
+    margin-bottom: 28px;
   }
 }
 
@@ -114,18 +163,35 @@
   }
 
   .headline {
-    font-size: clamp(1.7rem, 7vw, 2.7rem);
+    font-size: clamp(1.55rem, 7vw, 2.45rem);
   }
 
   .eyebrow {
-    font-size: clamp(2rem, 10vw, 3.2rem);
+    font-size: clamp(1.9rem, 10vw, 3rem);
   }
 
   .eyebrowAr {
-    font-size: clamp(2.2rem, 11vw, 3.5rem);
+    font-size: clamp(2.05rem, 11vw, 3.25rem);
   }
 
   .headlineAr {
     white-space: normal;
+  }
+
+  .grid {
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .clientsBlock {
+    gap: 10px;
+  }
+
+  .clientsHeader {
+    gap: 8px;
+  }
+
+  .clientsTitle {
+    font-size: 1.02rem;
   }
 }

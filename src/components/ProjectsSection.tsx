@@ -1,7 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
+import { Building2, Camera, Megaphone, ShieldCheck, Sparkles } from "lucide-react";
+import { ExpandingCards, type CardItem } from "@/components/ui/expanding-cards";
 import styles from "@/components/projects-section.module.css";
 import type { SiteLanguage } from "@/lib/site-content";
 
@@ -9,178 +10,161 @@ type ProjectsSectionProps = {
   language: SiteLanguage;
 };
 
-type ProjectCard = {
-  title: string;
-  subtitle: string;
-  image: string;
-};
-
 type ProjectsContent = {
   eyebrow: string;
   title: string;
-  body: string;
-  cta: string;
-  stats: Array<{ value: string; label: string }>;
-  cards: ProjectCard[];
+  lead: string;
+  items: CardItem[];
 };
 
 const CONTENT: Record<SiteLanguage, ProjectsContent> = {
   ar: {
-    eyebrow: "المشاريع",
+    eyebrow: "مشاريعنا",
     title: "مشاريعنا",
-    body: "نماذج من أعمالنا في التغطية، السرد البصري، وصناعة الحضور داخل المشهد الرياضي. كل مشروع مصمم ليخدم لحظة الحدث ويترك أثرًا واضحًا بعده.",
-    cta: "استعرض الأعمال",
-    stats: [
-      { value: "03", label: "أعمال مميزة" },
-      { value: "360°", label: "تغطية بصرية" },
-      { value: "Fast", label: "نشر سريع" },
-    ],
-    cards: [
+    lead:
+      "نماذج مختارة من أعمالنا في التغطية، والسرد البصري، وتفعيل العلامات داخل المشهد الرياضي. حرّك البطاقة لتكشف تفاصيل كل مشروع.",
+    items: [
       {
-        title: "السوبر الإسباني",
-        subtitle: "تغطية حدث",
-        image: "/services-background.jpg",
+        id: "super-cup",
+        title: "السوبر الإسباني في جدة",
+        description:
+          "تغطية بصرية سريعة ودقيقة صُممت لتواكب حجم الحدث وتنتج مواد جاهزة للنشر أثناء اللحظة نفسها.",
+        imgSrc: "/services-background.jpg",
+        icon: <Camera size={22} strokeWidth={2} />,
+        linkHref: "#work",
       },
       {
-        title: "محتوى الهلال",
-        subtitle: "سرد بصري",
-        image: "/hero-background.jpg",
+        id: "hilal-content",
+        title: "محتوى نادي الهلال",
+        description:
+          "نظام سرد بصري يومي يحافظ على هوية النادي ويترجم الطاقة الجماهيرية إلى حضور رقمي متماسك.",
+        imgSrc: "/hero-background.jpg",
+        icon: <ShieldCheck size={22} strokeWidth={2} />,
+        linkHref: "#work",
       },
       {
-        title: "تفعيل المكان",
-        subtitle: "تجربة حضور",
-        image: "/sec23.jpg",
+        id: "brand-campaign",
+        title: "حملة حضور للعلامة الرياضية",
+        description:
+          "بناء حضور تجاري وإعلامي متصل بالمشهد الرياضي عبر رسائل واضحة ومخرجات قابلة للتوسع عبر القنوات المختلفة.",
+        imgSrc: "/sec23.jpg",
+        icon: <Megaphone size={22} strokeWidth={2} />,
+        linkHref: "#work",
+      },
+      {
+        id: "matchday-story",
+        title: "سرد يوم المباراة",
+        description:
+          "تحويل تفاصيل المكان والجمهور والحركة إلى تجربة نشر متصلة بصريًا وتحريريًا قبل وأثناء وبعد المباراة.",
+        imgSrc: "/sec21.jpg",
+        icon: <Sparkles size={22} strokeWidth={2} />,
+        linkHref: "#work",
+      },
+      {
+        id: "venue-activation",
+        title: "تفعيل تجربة المكان",
+        description:
+          "تجهيز المكان بصريًا ليعمل كجزء من قيمة الحدث ويضيف بعدًا واضحًا لتجربة الحضور والتوثيق.",
+        imgSrc: "/about-us-image.jpg",
+        icon: <Building2 size={22} strokeWidth={2} />,
+        linkHref: "#work",
       },
     ],
   },
   en: {
     eyebrow: "Projects",
     title: "Our Projects",
-    body: "Selected work across coverage, visual storytelling, and sports-led presence building. Each project is designed to serve the moment and leave value after it.",
-    cta: "View work",
-    stats: [
-      { value: "03", label: "Featured works" },
-      { value: "360°", label: "Visual coverage" },
-      { value: "Fast", label: "Publishing flow" },
-    ],
-    cards: [
+    lead:
+      "Selected work across event coverage, visual storytelling, and brand activation inside the sports scene. Hover a card to reveal each project.",
+    items: [
       {
-        title: "Spanish Super Cup",
-        subtitle: "Event coverage",
-        image: "/services-background.jpg",
+        id: "super-cup",
+        title: "Spanish Super Cup in Jeddah",
+        description:
+          "Fast, accurate visual coverage built to match the scale of the event and publish in the moment.",
+        imgSrc: "/services-background.jpg",
+        icon: <Camera size={22} strokeWidth={2} />,
+        linkHref: "#work",
       },
       {
-        title: "Al Hilal Content",
-        subtitle: "Visual storytelling",
-        image: "/hero-background.jpg",
+        id: "hilal-content",
+        title: "Al Hilal Content System",
+        description:
+          "A daily visual publishing system that keeps the club identity sharp and the audience engaged.",
+        imgSrc: "/hero-background.jpg",
+        icon: <ShieldCheck size={22} strokeWidth={2} />,
+        linkHref: "#work",
       },
       {
+        id: "brand-campaign",
+        title: "Sports Brand Presence Campaign",
+        description:
+          "Commercial and editorial presence shaped into a campaign system that scales across channels.",
+        imgSrc: "/sec23.jpg",
+        icon: <Megaphone size={22} strokeWidth={2} />,
+        linkHref: "#work",
+      },
+      {
+        id: "matchday-story",
+        title: "Matchday Storytelling",
+        description:
+          "Venue, crowd, and energy turned into a cohesive publishing experience before, during, and after the game.",
+        imgSrc: "/sec21.jpg",
+        icon: <Sparkles size={22} strokeWidth={2} />,
+        linkHref: "#work",
+      },
+      {
+        id: "venue-activation",
         title: "Venue Activation",
-        subtitle: "Branded presence",
-        image: "/sec23.jpg",
+        description:
+          "Designing the visual presence of the place itself so it adds clear value to the event experience.",
+        imgSrc: "/about-us-image.jpg",
+        icon: <Building2 size={22} strokeWidth={2} />,
+        linkHref: "#work",
       },
     ],
   },
 };
 
-const transition = {
-  duration: 0.85,
+const introTransition = {
+  duration: 0.8,
   ease: [0.22, 1, 0.36, 1] as const,
 };
 
 export function ProjectsSection({ language }: ProjectsSectionProps) {
-  const isArabic = language === "ar";
   const content = CONTENT[language];
+  const isArabic = language === "ar";
 
   return (
-    <section className={styles.section} aria-label={content.title}>
+    <section id="projects" className={styles.section}>
       <div className={styles.shell}>
-        <div className={`${styles.stage} ${isArabic ? styles.stageAr : styles.stageEn}`}>
-          <motion.div
-            className={`${styles.content} ${isArabic ? styles.contentAr : styles.contentEn}`}
-            initial={{ opacity: 0, x: isArabic ? 32 : -32, y: 18 }}
-            whileInView={{ opacity: 1, x: 0, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={transition}
-          >
-            <span className={`${styles.eyebrow} ${isArabic ? styles.eyebrowAr : ""}`}>
-              {content.eyebrow}
-            </span>
-            <h2 className={`${styles.title} ${isArabic ? styles.titleAr : styles.titleEn}`}>
-              {content.title}
-            </h2>
-            <p className={`${styles.body} ${isArabic ? styles.bodyAr : styles.bodyEn}`}>
-              {content.body}
-            </p>
+        <motion.div
+          className={`${styles.intro} ${isArabic ? styles.introAr : styles.introEn}`}
+          initial={{ opacity: 0, x: isArabic ? 32 : -32, y: 18 }}
+          whileInView={{ opacity: 1, x: 0, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={introTransition}
+        >
+          <span className={`${styles.eyebrow} ${isArabic ? styles.eyebrowAr : ""}`}>
+            {content.eyebrow}
+          </span>
+          <h2 className={`${styles.title} ${isArabic ? styles.titleAr : styles.titleEn}`}>
+            {content.title}
+          </h2>
+          <p className={`${styles.lead} ${isArabic ? styles.leadAr : styles.leadEn}`}>
+            {content.lead}
+          </p>
+        </motion.div>
 
-            <div className={styles.stats}>
-              {content.stats.map((item) => (
-                <div key={item.label} className={styles.statCard}>
-                  <span className={styles.statValue}>{item.value}</span>
-                  <span className={`${styles.statLabel} ${isArabic ? styles.statLabelAr : ""}`}>
-                    {item.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <a href="#work" className={styles.cta}>
-              {content.cta}
-            </a>
-          </motion.div>
-
-          <motion.div
-            className={styles.visuals}
-            initial={{ opacity: 0, x: isArabic ? -24 : 24, y: 18 }}
-            whileInView={{ opacity: 1, x: 0, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ ...transition, delay: 0.08 }}
-          >
-            <article className={`${styles.card} ${styles.cardLarge}`}>
-              <div className={styles.cardMedia}>
-                <Image
-                  src={content.cards[0].image}
-                  alt={content.cards[0].title}
-                  fill
-                  sizes="(max-width: 900px) 100vw, 34vw"
-                  className={styles.cardImage}
-                />
-              </div>
-              <div className={styles.cardMeta}>
-                <h3 className={`${styles.cardTitle} ${isArabic ? styles.cardTitleAr : ""}`}>
-                  {content.cards[0].title}
-                </h3>
-                <p className={`${styles.cardSubtitle} ${isArabic ? styles.cardSubtitleAr : ""}`}>
-                  {content.cards[0].subtitle}
-                </p>
-              </div>
-            </article>
-
-            <div className={styles.cardStack}>
-              {content.cards.slice(1).map((card) => (
-                <article key={card.title} className={styles.card}>
-                  <div className={styles.cardMedia}>
-                    <Image
-                      src={card.image}
-                      alt={card.title}
-                      fill
-                      sizes="(max-width: 900px) 100vw, 22vw"
-                      className={styles.cardImage}
-                    />
-                  </div>
-                  <div className={styles.cardMeta}>
-                    <h3 className={`${styles.cardTitle} ${isArabic ? styles.cardTitleAr : ""}`}>
-                      {card.title}
-                    </h3>
-                    <p className={`${styles.cardSubtitle} ${isArabic ? styles.cardSubtitleAr : ""}`}>
-                      {card.subtitle}
-                    </p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </motion.div>
-        </div>
+        <motion.div
+          className={styles.cardsWrap}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.16 }}
+          transition={{ ...introTransition, delay: 0.08 }}
+        >
+          <ExpandingCards items={content.items} defaultActiveIndex={0} />
+        </motion.div>
       </div>
     </section>
   );

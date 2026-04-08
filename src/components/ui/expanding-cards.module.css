@@ -1,76 +1,3 @@
-.section {
-  position: relative;
-  background:
-    radial-gradient(circle at top, rgba(43, 74, 186, 0.12), transparent 34%),
-    #0a0f2d;
-  color: #f6f2ea;
-}
-
-.shell {
-  width: calc(100vw - 48px);
-  max-width: 1600px;
-  margin-inline: auto;
-  padding-block: 92px 84px;
-}
-
-.intro {
-  display: grid;
-  gap: 16px;
-  max-width: 760px;
-  margin-bottom: 34px;
-}
-
-.introRtl {
-  justify-items: end;
-  text-align: right;
-}
-
-.introLtr {
-  justify-items: start;
-  text-align: left;
-}
-
-.eyebrow {
-  color: rgba(246, 242, 234, 0.66);
-  font-size: 0.88rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.eyebrowAr {
-  font-family: var(--font-arabic-display), sans-serif;
-  font-size: 0.98rem;
-  letter-spacing: 0;
-  text-transform: none;
-}
-
-.headline {
-  margin: 0;
-  color: #f6f2ea;
-  font-size: clamp(2.9rem, 7vw, 6rem);
-  font-weight: 600;
-  letter-spacing: -0.08em;
-  line-height: 0.92;
-}
-
-.headlineAr {
-  font-family: var(--font-arabic-display), sans-serif;
-  letter-spacing: -0.04em;
-}
-
-.lead {
-  max-width: 62ch;
-  color: rgba(246, 242, 234, 0.78);
-  font-size: 1rem;
-  line-height: 1.8;
-}
-
-.leadAr {
-  font-family: var(--font-arabic-display), sans-serif;
-  font-size: 1.04rem;
-}
-
 .cards {
   display: grid;
   width: 100%;
@@ -97,7 +24,9 @@
 }
 
 .card:focus-visible {
-  box-shadow: 0 0 0 2px rgba(145, 191, 255, 0.85);
+  box-shadow:
+    0 0 0 2px rgba(145, 191, 255, 0.85),
+    0 28px 80px rgba(0, 0, 0, 0.24);
 }
 
 .image {
@@ -121,7 +50,7 @@
   inset: 0;
   background:
     linear-gradient(180deg, rgba(6, 10, 30, 0.04), transparent 30%),
-    linear-gradient(0deg, rgba(5, 8, 23, 0.92), rgba(5, 8, 23, 0.28) 48%, rgba(5, 8, 23, 0.16));
+    linear-gradient(0deg, rgba(5, 8, 23, 0.94), rgba(5, 8, 23, 0.34) 52%, rgba(5, 8, 23, 0.18));
 }
 
 .content {
@@ -217,32 +146,14 @@
 }
 
 @media (max-width: 900px) {
-  .shell {
-    width: min(100%, calc(100vw - 24px));
-    padding-block: 72px 62px;
-  }
-
   .cards {
     height: 620px;
   }
 }
 
 @media (max-width: 640px) {
-  .shell {
-    padding-block: 56px 52px;
-  }
-
-  .headline {
-    font-size: clamp(2.3rem, 12vw, 3.5rem);
-  }
-
-  .lead {
-    font-size: 0.94rem;
-    line-height: 1.75;
-  }
-
   .cards {
-    height: 560px;
+    height: 540px;
     gap: 8px;
   }
 
@@ -255,11 +166,12 @@
   }
 
   .title {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
 
   .description {
-    font-size: 0.84rem;
     max-width: none;
+    font-size: 0.84rem;
+    line-height: 1.68;
   }
 }
