@@ -3,7 +3,7 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import { Building2, Camera, Landmark, Megaphone, Shield, Trophy } from "lucide-react";
-import { LogoCloud } from "@/components/ui/logo-cloud-3";
+import { Logos3 } from "@/components/ui/logos3";
 import { MusicPlayerCard } from "@/components/ui/music-player-card";
 import { cn } from "@/lib/utils";
 import type { SiteLanguage } from "@/lib/site-content";
@@ -93,35 +93,78 @@ const WORK_ITEMS: Record<SiteLanguage, WorkMediaItem[]> = {
 
 const CLIENT_LOGOS: Record<
   SiteLanguage,
-  Array<{ alt: string; label: string; icon: React.ReactNode }>
+  Array<{ id: string; description: string; label: string; icon: React.ReactNode }>
 > = {
   ar: [
-    { alt: "وزارة الرياضة", label: "وزارة الرياضة", icon: <Landmark size={18} strokeWidth={2} /> },
-    { alt: "الهلال", label: "الهلال", icon: <Shield size={18} strokeWidth={2} /> },
-    { alt: "البطولات", label: "البطولات", icon: <Trophy size={18} strokeWidth={2} /> },
-    { alt: "التغطيات", label: "التغطيات", icon: <Camera size={18} strokeWidth={2} /> },
     {
-      alt: "الجهات الرياضية",
+      id: "client-ministry",
+      description: "وزارة الرياضة",
+      label: "وزارة الرياضة",
+      icon: <Landmark size={18} strokeWidth={2} />,
+    },
+    { id: "client-hilal", description: "الهلال", label: "الهلال", icon: <Shield size={18} strokeWidth={2} /> },
+    {
+      id: "client-events",
+      description: "البطولات",
+      label: "البطولات",
+      icon: <Trophy size={18} strokeWidth={2} />,
+    },
+    {
+      id: "client-coverage",
+      description: "التغطيات",
+      label: "التغطيات",
+      icon: <Camera size={18} strokeWidth={2} />,
+    },
+    {
+      id: "client-entities",
+      description: "الجهات الرياضية",
       label: "الجهات الرياضية",
       icon: <Building2 size={18} strokeWidth={2} />,
     },
-    { alt: "الحملات", label: "الحملات", icon: <Megaphone size={18} strokeWidth={2} /> },
+    {
+      id: "client-campaigns",
+      description: "الحملات",
+      label: "الحملات",
+      icon: <Megaphone size={18} strokeWidth={2} />,
+    },
   ],
   en: [
     {
-      alt: "Ministry of Sport",
+      id: "client-ministry",
+      description: "Ministry of Sport",
       label: "Ministry of Sport",
       icon: <Landmark size={18} strokeWidth={2} />,
     },
-    { alt: "Al Hilal", label: "Al Hilal", icon: <Shield size={18} strokeWidth={2} /> },
-    { alt: "Championships", label: "Championships", icon: <Trophy size={18} strokeWidth={2} /> },
-    { alt: "Coverage", label: "Coverage", icon: <Camera size={18} strokeWidth={2} /> },
     {
-      alt: "Sports Entities",
+      id: "client-hilal",
+      description: "Al Hilal",
+      label: "Al Hilal",
+      icon: <Shield size={18} strokeWidth={2} />,
+    },
+    {
+      id: "client-events",
+      description: "Championships",
+      label: "Championships",
+      icon: <Trophy size={18} strokeWidth={2} />,
+    },
+    {
+      id: "client-coverage",
+      description: "Coverage",
+      label: "Coverage",
+      icon: <Camera size={18} strokeWidth={2} />,
+    },
+    {
+      id: "client-entities",
+      description: "Sports Entities",
       label: "Sports Entities",
       icon: <Building2 size={18} strokeWidth={2} />,
     },
-    { alt: "Campaigns", label: "Campaigns", icon: <Megaphone size={18} strokeWidth={2} /> },
+    {
+      id: "client-campaigns",
+      description: "Campaigns",
+      label: "Campaigns",
+      icon: <Megaphone size={18} strokeWidth={2} />,
+    },
   ],
 };
 
@@ -296,15 +339,10 @@ export function WorksMediaSection({ language }: WorksMediaSectionProps) {
           transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
         >
           <div className={styles.clientsDivider} />
-          <div className={styles.clientsHeader}>
-            <span className={cn(styles.clientsLabel, isArabic && styles.clientsLabelAr)}>
-              {isArabic ? "العملاء" : "Clients"}
-            </span>
-            <h3 className={cn(styles.clientsTitle, isArabic && styles.clientsTitleAr)}>
-              {isArabic ? "شركاء الحضور والثقة" : "Trusted by sports-led partners"}
-            </h3>
-          </div>
-          <LogoCloud logos={clientLogos} />
+          <Logos3
+            heading={isArabic ? "شركاؤنا في النجاح" : "Trusted by our partners"}
+            logos={clientLogos}
+          />
           <div className={styles.clientsDivider} />
         </motion.div>
       </div>

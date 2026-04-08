@@ -1,0 +1,80 @@
+.root {
+  position: relative;
+}
+
+.viewport {
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+}
+
+.containerHorizontal {
+  margin-left: calc(var(--carousel-gap, 1rem) * -1);
+}
+
+.containerVertical {
+  flex-direction: column;
+  margin-top: calc(var(--carousel-gap, 1rem) * -1);
+}
+
+.item {
+  min-width: 0;
+  flex: 0 0 100%;
+}
+
+.itemHorizontal {
+  padding-left: var(--carousel-gap, 1rem);
+}
+
+.itemVertical {
+  padding-top: var(--carousel-gap, 1rem);
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  transform: translateY(-50%);
+}
+
+.navButtonPrev {
+  left: -3.25rem;
+}
+
+.navButtonNext {
+  right: -3.25rem;
+}
+
+.navButtonVerticalPrev,
+.navButtonVerticalNext {
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+}
+
+.navButtonVerticalPrev {
+  top: -3.25rem;
+}
+
+.navButtonVerticalNext {
+  top: auto;
+  bottom: -3.25rem;
+}
+
+.screenReaderOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

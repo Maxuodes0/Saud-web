@@ -1,0 +1,165 @@
+.section {
+  display: grid;
+  gap: 18px;
+}
+
+.headingWrap {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.heading {
+  margin: 0;
+  color: rgba(246, 242, 234, 0.96);
+  font-size: clamp(1.2rem, 2vw, 1.65rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.headingAr {
+  font-family: var(--font-arabic-display), sans-serif;
+}
+
+.trackWrap {
+  position: relative;
+}
+
+.carousel {
+  width: 100%;
+}
+
+.content {
+  align-items: stretch;
+}
+
+.item {
+  flex: 0 0 33.333%;
+}
+
+.logoShell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80px;
+  padding: 0 10px;
+}
+
+.logoCard {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 58px;
+  width: 100%;
+  max-width: 220px;
+  padding: 0 20px;
+  border: 1px solid rgba(246, 242, 234, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 16px 42px rgba(0, 0, 0, 0.12);
+  color: rgba(246, 242, 234, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.logoIcon {
+  display: inline-flex;
+  color: #4db8ff;
+  flex: 0 0 auto;
+}
+
+.logoLabel {
+  color: inherit;
+  font-size: 0.94rem;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.logoLabelAr {
+  font-family: var(--font-arabic-display), sans-serif;
+}
+
+.logoImageWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoImage {
+  display: block;
+  width: auto;
+  height: 24px;
+  object-fit: contain;
+}
+
+.fadeLeft,
+.fadeRight {
+  position: absolute;
+  inset-block: 0;
+  width: 72px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.fadeLeft {
+  left: 0;
+  background: linear-gradient(90deg, #090f2b 12%, rgba(9, 15, 43, 0));
+}
+
+.fadeRight {
+  right: 0;
+  background: linear-gradient(270deg, #090f2b 12%, rgba(9, 15, 43, 0));
+}
+
+@media (max-width: 960px) {
+  .item {
+    flex-basis: 40%;
+  }
+}
+
+@media (max-width: 760px) {
+  .item {
+    flex-basis: 52%;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    gap: 14px;
+  }
+
+  .heading {
+    font-size: 1.02rem;
+  }
+
+  .item {
+    flex-basis: 70%;
+  }
+
+  .logoShell {
+    min-height: 64px;
+    padding: 0 6px;
+  }
+
+  .logoCard {
+    min-height: 52px;
+    padding: 0 16px;
+    gap: 10px;
+  }
+
+  .logoLabel {
+    font-size: 0.84rem;
+  }
+
+  .logoImage {
+    height: 20px;
+  }
+
+  .fadeLeft,
+  .fadeRight {
+    width: 34px;
+  }
+}
