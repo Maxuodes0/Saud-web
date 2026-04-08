@@ -1,0 +1,28 @@
+.root {
+  position: relative;
+  display: flex;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(11, 17, 48, 0.18);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fallback {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: rgba(11, 17, 48, 0.12);
+  color: #0d1240;
+  font-size: 0.78rem;
+  font-weight: 700;
+}

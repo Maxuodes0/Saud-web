@@ -1,0 +1,351 @@
+.section {
+  position: relative;
+  background: #f1ece3;
+  color: #0d1240;
+}
+
+.shell {
+  width: calc(100vw - 48px);
+  max-width: 1600px;
+  margin-inline: auto;
+  padding-block: 86px 68px;
+}
+
+.eyebrow {
+  margin-bottom: 18px;
+  color: #0d1240;
+  font-family: var(--font-english-body), Arial, sans-serif;
+  font-size: clamp(2.8rem, 7vw, 5.8rem);
+  font-weight: 600;
+  letter-spacing: -0.07em;
+  line-height: 0.92;
+}
+
+.eyebrowAr {
+  font-family: var(--font-arabic-display), sans-serif;
+  font-size: clamp(3.2rem, 7vw, 6.2rem);
+  letter-spacing: -0.05em;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.92fr) minmax(220px, 430px);
+  grid-template-areas: "titles media";
+  align-items: start;
+  gap: clamp(42px, 7vw, 124px);
+}
+
+.titlesColumn {
+  grid-area: titles;
+  display: grid;
+  gap: 26px;
+  align-content: start;
+  width: 100%;
+}
+
+.titles {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  justify-items: start;
+  width: 100%;
+}
+
+.titleButton {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: rgba(13, 18, 64, 0.68);
+  cursor: pointer;
+  font-family: var(--font-arabic-display), sans-serif;
+  font-size: clamp(1.5rem, 2.8vw, 2.8rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  padding: 0;
+  text-align: right;
+  transition: color 180ms ease;
+}
+
+.rtl .titleButton {
+  text-align: left;
+}
+
+.titleButton:hover,
+.titleButton:focus-visible,
+.titleButtonActive {
+  color: #0d1240;
+}
+
+.titleButtonEn {
+  font-family: var(--font-english-body), Arial, sans-serif;
+  font-size: clamp(1.35rem, 2.5vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.titleInner {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.characterWrap {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.wordWrap {
+  white-space: pre;
+}
+
+.characterBase {
+  display: inline-block;
+  opacity: 0.42;
+}
+
+.characterActive {
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0;
+  display: inline-block;
+  color: #0d1240;
+}
+
+.mediaColumn {
+  grid-area: media;
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  width: 100%;
+}
+
+.imageWrap {
+  display: grid;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border-radius: 28px;
+  min-height: 460px;
+  border: 1px solid rgba(13, 18, 64, 0.14);
+  background: #c7cfdf;
+  box-shadow: 0 32px 90px rgba(13, 18, 64, 0.18);
+}
+
+.imageWrap > * {
+  grid-area: 1 / 1;
+}
+
+.imagePanel {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #0d1240;
+  will-change: clip-path, opacity, transform;
+}
+
+.descriptionCard {
+  display: grid;
+  gap: 8px;
+  min-height: 150px;
+  padding: 18px 20px;
+  border: 1px solid rgba(13, 18, 64, 0.12);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 18px 44px rgba(13, 18, 64, 0.08);
+}
+
+.cardTitle {
+  color: rgba(13, 18, 64, 0.96);
+  font-family: var(--font-arabic-display), sans-serif;
+  font-size: 1.12rem;
+  line-height: 1.2;
+}
+
+.cardTitleEn {
+  font-family: var(--font-english-body), Arial, sans-serif;
+  font-weight: 600;
+}
+
+.cardBody {
+  color: rgba(13, 18, 64, 0.82);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.cardBodyEn {
+  font-family: var(--font-english-body), Arial, sans-serif;
+  line-height: 1.75;
+}
+
+.rtl {
+  direction: rtl;
+}
+
+.rtl .layout {
+  grid-template-columns: minmax(340px, 520px) minmax(420px, 1fr);
+  grid-template-areas: "media titles";
+}
+
+.rtl .titlesColumn {
+  justify-self: stretch;
+  width: 100%;
+  max-width: none;
+  margin-inline-start: auto;
+  text-align: right;
+}
+
+.rtl .titles {
+  justify-self: stretch;
+  justify-items: end;
+  text-align: right;
+  width: 100%;
+}
+
+.rtl .mediaColumn {
+  justify-items: stretch;
+}
+
+.rtl .titleButton {
+  text-align: right;
+  justify-self: stretch;
+}
+
+.rtl .titleInner {
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+
+.ltr {
+  direction: ltr;
+}
+
+.ltr .titlesColumn {
+  justify-self: start;
+  width: min(100%, 560px);
+  text-align: left;
+}
+
+.ltr .titleButton {
+  text-align: left;
+}
+
+.ltr .titleInner {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .shell {
+    width: min(100%, calc(100vw - 24px));
+    padding-block: 64px 52px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "titles"
+      "media";
+    gap: 20px;
+  }
+
+  .titles {
+    order: 1;
+    gap: 2px;
+    justify-items: stretch;
+  }
+
+  .titlesColumn {
+    order: 1;
+    gap: 14px;
+  }
+
+  .mediaColumn {
+    order: 2;
+    gap: 12px;
+  }
+
+  .imageWrap {
+    aspect-ratio: 4 / 3;
+    min-height: 260px;
+  }
+
+  .descriptionCard {
+    min-height: auto;
+    padding: 16px 18px;
+  }
+
+  .titleButton {
+    padding-block: 10px;
+    border-bottom: 1px solid rgba(13, 18, 64, 0.08);
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    line-height: 1.08;
+  }
+
+  .titleButton:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .shell {
+    width: min(100%, calc(100vw - 20px));
+    padding-block: 52px 42px;
+  }
+
+  .eyebrow {
+    margin-bottom: 8px;
+    font-size: clamp(2rem, 10vw, 3.2rem);
+  }
+
+  .eyebrowAr {
+    font-size: clamp(2.2rem, 11vw, 3.5rem);
+  }
+
+  .titles {
+    gap: 0;
+  }
+
+  .titlesColumn {
+    gap: 10px;
+  }
+
+  .titleButton {
+    font-size: clamp(1.08rem, 5.7vw, 1.4rem);
+    line-height: 1.14;
+    padding-block: 11px;
+  }
+
+  .layout {
+    gap: 16px;
+  }
+
+  .mediaColumn {
+    gap: 10px;
+  }
+
+  .imageWrap {
+    min-height: 220px;
+    border-radius: 16px;
+  }
+
+  .descriptionCard {
+    padding: 13px 14px;
+    border-radius: 16px;
+  }
+
+  .cardTitle {
+    font-size: 0.96rem;
+  }
+
+  .cardBody {
+    font-size: 0.82rem;
+    line-height: 1.72;
+  }
+}
