@@ -12,12 +12,6 @@ interface TextStaggerHoverProps {
   className?: string;
 }
 
-interface HoverSliderImageProps {
-  index: number;
-  imageUrl: string;
-  className?: string;
-}
-
 interface HoverSliderContextValue {
   activeSlide: number;
   changeSlide: (index: number) => void;
@@ -27,7 +21,6 @@ type ServiceSlide = {
   id: string;
   title: string;
   body: string;
-  imageUrl: string;
 };
 
 type ServicesAnimatedSlideshowProps = {
@@ -67,43 +60,36 @@ const SLIDES: Record<SiteLanguage, ServiceSlide[]> = {
       id: "athlete-management",
       title: "تمثيل وإدارة الرياضيين",
       body: "إدارة الحضور التجاري والإعلامي للرياضيين، وتنظيم الشراكات والفرص التي تعزّز قيمة الاسم الرياضي داخل الملعب وخارجه.",
-      imageUrl: "/serv.jpg",
     },
     {
       id: "digital-marketing",
       title: "التسويق الرقمي",
       body: "تصميم وتنفيذ حملات رقمية تربط العلامة بالجمهور الرياضي بالمحتوى المناسب والتوقيت المناسب مع متابعة الأداء وتحسين النتائج باستمرار.",
-      imageUrl: "/hero-background.jpg",
     },
     {
       id: "media-coverage",
       title: "التغطية الإعلامية للفعاليات",
       body: "تغطية ميدانية شاملة للفعاليات الرياضية عبر التصوير والتحرير السريع وإنتاج مواد جاهزة للنشر اللحظي عبر القنوات المختلفة.",
-      imageUrl: "/services-background.jpg",
     },
     {
       id: "content-strategy",
       title: "استراتيجية النشر وصناعة المحتوى",
       body: "تخطيط المحتوى الرياضي وصناعته وفق رحلة واضحة من الفكرة إلى النشر بما يتوافق مع المنصة والهدف والجمهور المستهدف.",
-      imageUrl: "/sec21.jpg",
     },
     {
       id: "brand-strategy",
       title: "استراتيجية العلامة التجارية",
       body: "صياغة حضور واضح للعلامة داخل المشهد الرياضي من خلال تموضع دقيق ورسائل متسقة وتجربة بصرية متماسكة.",
-      imageUrl: "/second-sec-image.jpg",
     },
     {
       id: "pr-management",
       title: "إدارة العلاقات العامة",
       body: "إدارة العلاقة مع الإعلام والجمهور والشركاء بما يحافظ على سمعة الجهة ويعزّز حضورها في اللحظات المهمة.",
-      imageUrl: "/about-us-image.jpg",
     },
     {
       id: "influencer-marketing",
       title: "التسويق عبر المؤثرين",
       body: "اختيار المؤثرين المناسبين وبناء حملات تعاون تحقق وصولًا نوعيًا وتفاعلًا مرتبطًا بأهداف النشاط الرياضي.",
-      imageUrl: "/hero-background.jpg",
     },
   ],
   en: [
@@ -111,43 +97,36 @@ const SLIDES: Record<SiteLanguage, ServiceSlide[]> = {
       id: "athlete-management",
       title: "Athlete Management",
       body: "Managing the commercial and media presence of athletes while structuring partnerships that strengthen their value on and off the field.",
-      imageUrl: "/serv.jpg",
     },
     {
       id: "digital-marketing",
       title: "Digital Marketing",
       body: "Designing and executing campaigns that connect brands with sports audiences through the right content, timing, and continuous optimization.",
-      imageUrl: "/hero-background.jpg",
     },
     {
       id: "media-coverage",
       title: "Event Media Coverage",
       body: "Full on-ground sports coverage through filming, fast editing, and instant-ready publishing assets across channels.",
-      imageUrl: "/services-background.jpg",
     },
     {
       id: "content-strategy",
       title: "Content Strategy",
       body: "Planning and producing sports content through a clear path from concept to publishing, aligned with platform, goal, and audience.",
-      imageUrl: "/sec21.jpg",
     },
     {
       id: "brand-strategy",
       title: "Brand Strategy",
       body: "Crafting a clear sports-market presence through sharp positioning, consistent messaging, and a cohesive visual system.",
-      imageUrl: "/second-sec-image.jpg",
     },
     {
       id: "pr-management",
       title: "Public Relations",
       body: "Managing media, audience, and partner relationships in ways that protect reputation and strengthen visibility in key moments.",
-      imageUrl: "/about-us-image.jpg",
     },
     {
       id: "influencer-marketing",
       title: "Influencer Marketing",
       body: "Selecting the right creators and building collaborations that drive qualified reach and engagement tied to sports objectives.",
-      imageUrl: "/hero-background.jpg",
     },
   ],
 };
@@ -229,50 +208,6 @@ export const TextStaggerHover = React.forwardRef<HTMLButtonElement, TextStaggerH
 );
 TextStaggerHover.displayName = "TextStaggerHover";
 
-const clipPathVariants = {
-  visible: {
-    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-    opacity: 1,
-    scale: 1,
-  },
-  hidden: {
-    clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-    opacity: 0,
-    scale: 1.04,
-  },
-};
-
-export const HoverSliderImageWrap = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, children, ...props }, ref) => {
-  return (
-    <div ref={ref} className={cn(styles.imageWrap, className)} {...props}>
-      {children}
-    </div>
-  );
-});
-HoverSliderImageWrap.displayName = "HoverSliderImageWrap";
-
-export const HoverSliderImage = React.forwardRef<HTMLDivElement, HoverSliderImageProps>(
-  ({ index, imageUrl, className }, ref) => {
-    const { activeSlide } = useHoverSliderContext();
-
-    return (
-      <motion.div
-        ref={ref}
-        className={cn(styles.imagePanel, className)}
-        style={{ backgroundImage: `url(${imageUrl})` }}
-        transition={{ ease: [0.33, 1, 0.68, 1], duration: 0.8 }}
-        variants={clipPathVariants}
-        initial="hidden"
-        animate={activeSlide === index ? "visible" : "hidden"}
-      />
-    );
-  },
-);
-HoverSliderImage.displayName = "HoverSliderImage";
-
 export function ServicesAnimatedSlideshow({ language }: ServicesAnimatedSlideshowProps) {
   const slides = SLIDES[language];
   const [activeSlide, setActiveSlide] = React.useState(0);
@@ -303,12 +238,6 @@ export function ServicesAnimatedSlideshow({ language }: ServicesAnimatedSlidesho
           </div>
 
           <div className={styles.mediaColumn}>
-            <HoverSliderImageWrap>
-              {slides.map((slide, index) => (
-                <HoverSliderImage key={slide.id} index={index} imageUrl={slide.imageUrl} />
-              ))}
-            </HoverSliderImageWrap>
-
             <motion.div
               key={active.id}
               className={styles.descriptionCard}

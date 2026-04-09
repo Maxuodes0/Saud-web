@@ -31,7 +31,7 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
           "تغطية بصرية سريعة ودقيقة صُممت لتواكب حجم الحدث وتنتج مواد جاهزة للنشر أثناء اللحظة نفسها.",
         imgSrc: "/services-background.jpg",
         icon: <Camera size={22} strokeWidth={2} />,
-        linkHref: "#work",
+        linkHref: "#",
       },
       {
         id: "hilal-content",
@@ -40,7 +40,7 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
           "نظام سرد بصري يومي يحافظ على هوية النادي ويترجم الطاقة الجماهيرية إلى حضور رقمي متماسك.",
         imgSrc: "/hero-background.jpg",
         icon: <ShieldCheck size={22} strokeWidth={2} />,
-        linkHref: "#work",
+        linkHref: "#",
       },
       {
         id: "brand-campaign",
@@ -49,7 +49,7 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
           "بناء حضور تجاري وإعلامي متصل بالمشهد الرياضي عبر رسائل واضحة ومخرجات قابلة للتوسع عبر القنوات المختلفة.",
         imgSrc: "/sec23.jpg",
         icon: <Megaphone size={22} strokeWidth={2} />,
-        linkHref: "#work",
+        linkHref: "#",
       },
       {
         id: "matchday-story",
@@ -58,7 +58,7 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
           "تحويل تفاصيل المكان والجمهور والحركة إلى تجربة نشر متصلة بصريًا وتحريريًا قبل وأثناء وبعد المباراة.",
         imgSrc: "/sec21.jpg",
         icon: <Sparkles size={22} strokeWidth={2} />,
-        linkHref: "#work",
+        linkHref: "#",
       },
       {
         id: "venue-activation",
@@ -67,7 +67,7 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
           "تجهيز المكان بصريًا ليعمل كجزء من قيمة الحدث ويضيف بعدًا واضحًا لتجربة الحضور والتوثيق.",
         imgSrc: "/about-us-image.jpg",
         icon: <Building2 size={22} strokeWidth={2} />,
-        linkHref: "#work",
+        linkHref: "#",
       },
     ],
   },
@@ -84,7 +84,7 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
           "Fast, accurate visual coverage built to match the scale of the event and publish in the moment.",
         imgSrc: "/services-background.jpg",
         icon: <Camera size={22} strokeWidth={2} />,
-        linkHref: "#work",
+        linkHref: "#",
       },
       {
         id: "hilal-content",
@@ -93,7 +93,7 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
           "A daily visual publishing system that keeps the club identity sharp and the audience engaged.",
         imgSrc: "/hero-background.jpg",
         icon: <ShieldCheck size={22} strokeWidth={2} />,
-        linkHref: "#work",
+        linkHref: "#",
       },
       {
         id: "brand-campaign",
@@ -102,7 +102,7 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
           "Commercial and editorial presence shaped into a campaign system that scales across channels.",
         imgSrc: "/sec23.jpg",
         icon: <Megaphone size={22} strokeWidth={2} />,
-        linkHref: "#work",
+        linkHref: "#",
       },
       {
         id: "matchday-story",
@@ -111,7 +111,7 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
           "Venue, crowd, and energy turned into a cohesive publishing experience before, during, and after the game.",
         imgSrc: "/sec21.jpg",
         icon: <Sparkles size={22} strokeWidth={2} />,
-        linkHref: "#work",
+        linkHref: "#",
       },
       {
         id: "venue-activation",
@@ -120,7 +120,7 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
           "Designing the visual presence of the place itself so it adds clear value to the event experience.",
         imgSrc: "/about-us-image.jpg",
         icon: <Building2 size={22} strokeWidth={2} />,
-        linkHref: "#work",
+        linkHref: "#",
       },
     ],
   },

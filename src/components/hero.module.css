@@ -256,7 +256,7 @@
 .heroTagline {
   max-width: 34ch;
   color: rgba(255, 255, 255, 0.82);
-  font-size: clamp(0.95rem, 0.3vw + 0.9rem, 1rem);
+  font-size: clamp(1.24rem, 0.39vw + 1.17rem, 1.3rem);
   line-height: 1.85;
 }
 
@@ -659,7 +659,7 @@
 
   .heroTagline {
     max-width: 28ch;
-    font-size: 0.92rem;
+    font-size: 1.2rem;
     line-height: 1.8;
   }
 
@@ -772,7 +772,7 @@
 
   .heroTagline,
   .heroText {
-    font-size: 0.88rem;
+    font-size: 1.14rem;
     line-height: 1.72;
   }
 
