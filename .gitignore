@@ -8,3 +8,6 @@ yarn-debug.log*
 yarn-error.log*
 .next-dev*.log
 .env*
+tsconfig.tsbuildinfo
+Work/
+Video/ALHILAL.mp4

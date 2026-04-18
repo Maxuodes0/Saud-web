@@ -28,10 +28,7 @@ type ServicesAnimatedSlideshowProps = {
 };
 
 function splitEnglishText(text: string) {
-  return text
-    .split(" ")
-    .map((word) => `${word} `)
-    .flatMap((word) => word.split(""));
+  return Array.from(text, (character) => (character === " " ? "\u00A0" : character));
 }
 
 function splitArabicText(text: string) {

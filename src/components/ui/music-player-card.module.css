@@ -79,6 +79,11 @@
   object-fit: cover;
 }
 
+.mediaContain {
+  object-fit: contain;
+  background: rgba(4, 8, 24, 0.72);
+}
+
 .overlay {
   position: absolute;
   inset: 0;

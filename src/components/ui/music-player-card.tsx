@@ -13,6 +13,7 @@ export interface MusicPlayerCardProps extends React.HTMLAttributes<HTMLDivElemen
   artistHandle: string;
   avatarSrc: string;
   albumArtSrc: string;
+  mediaFit?: "cover" | "contain";
   songDuration: number;
   currentProgress: number;
   isPlaying: boolean;
@@ -46,6 +47,7 @@ const MusicPlayerCard = React.forwardRef<HTMLDivElement, MusicPlayerCardProps>(
       artistHandle,
       avatarSrc,
       albumArtSrc,
+      mediaFit = "cover",
       songDuration,
       currentProgress,
       isPlaying,
@@ -135,7 +137,7 @@ const MusicPlayerCard = React.forwardRef<HTMLDivElement, MusicPlayerCardProps>(
               ref={videoRef}
               src={videoSrc}
               poster={albumArtSrc}
-              className={styles.media}
+              className={cn(styles.media, mediaFit === "contain" && styles.mediaContain)}
               playsInline
               preload="metadata"
               onTimeUpdate={(event) => {
@@ -156,7 +158,7 @@ const MusicPlayerCard = React.forwardRef<HTMLDivElement, MusicPlayerCardProps>(
               alt={`Visual cover for ${artistName}`}
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
-              className={styles.media}
+              className={cn(styles.media, mediaFit === "contain" && styles.mediaContain)}
             />
           )}
 

@@ -16,6 +16,7 @@ type WorkMediaItem = {
   avatarSrc: string;
   albumArtSrc: string;
   videoSrc?: string;
+  mediaFit?: "cover" | "contain";
   duration: number;
 };
 
@@ -30,6 +31,8 @@ type PlaybackState = {
   duration: number;
 };
 
+const SUPERCOPA_VIDEO_URL = "/api/videos/supercopa";
+
 const WORK_ITEMS: Record<SiteLanguage, WorkMediaItem[]> = {
   ar: [
     {
@@ -37,8 +40,9 @@ const WORK_ITEMS: Record<SiteLanguage, WorkMediaItem[]> = {
       artistName: "السوبر الإسباني",
       artistHandle: "تغطية حدث",
       avatarSrc: "/sprint-s-logo-white.png",
-      albumArtSrc: "/services-background.jpg",
-      videoSrc: "",
+      albumArtSrc: "/supercopa-de-espana.jpg",
+      videoSrc: SUPERCOPA_VIDEO_URL,
+      mediaFit: "contain",
       duration: 92,
     },
     {
@@ -46,7 +50,7 @@ const WORK_ITEMS: Record<SiteLanguage, WorkMediaItem[]> = {
       artistName: "محتوى الهلال",
       artistHandle: "سرد بصري",
       avatarSrc: "/sprint-s-logo-white.png",
-      albumArtSrc: "/hero-background.jpg",
+      albumArtSrc: "/hilal.jpg",
       videoSrc: "",
       duration: 84,
     },
@@ -55,19 +59,21 @@ const WORK_ITEMS: Record<SiteLanguage, WorkMediaItem[]> = {
       artistName: "تجربة المكان",
       artistHandle: "تفعيل بصري",
       avatarSrc: "/sprint-s-logo-white.png",
-      albumArtSrc: "/sec23.jpg",
+      albumArtSrc: "/supercoppa-italiana.jpg",
       videoSrc: "",
+      mediaFit: "contain",
       duration: 78,
     },
   ],
   en: [
     {
       id: "project-1",
-      artistName: "Spanish Super Cup",
+      artistName: "Supercopa de España 2026",
       artistHandle: "Event Coverage",
       avatarSrc: "/sprint-s-logo-white.png",
-      albumArtSrc: "/services-background.jpg",
-      videoSrc: "",
+      albumArtSrc: "/supercopa-de-espana.jpg",
+      videoSrc: SUPERCOPA_VIDEO_URL,
+      mediaFit: "contain",
       duration: 92,
     },
     {
@@ -75,7 +81,7 @@ const WORK_ITEMS: Record<SiteLanguage, WorkMediaItem[]> = {
       artistName: "Al Hilal Content",
       artistHandle: "Visual Storytelling",
       avatarSrc: "/sprint-s-logo-white.png",
-      albumArtSrc: "/hero-background.jpg",
+      albumArtSrc: "/hilal.jpg",
       videoSrc: "",
       duration: 84,
     },
@@ -84,8 +90,9 @@ const WORK_ITEMS: Record<SiteLanguage, WorkMediaItem[]> = {
       artistName: "Venue Activation",
       artistHandle: "Branded Experience",
       avatarSrc: "/sprint-s-logo-white.png",
-      albumArtSrc: "/sec23.jpg",
+      albumArtSrc: "/supercoppa-italiana.jpg",
       videoSrc: "",
+      mediaFit: "contain",
       duration: 78,
     },
   ],
@@ -314,6 +321,7 @@ export function WorksMediaSection({ language }: WorksMediaSectionProps) {
                 avatarSrc={item.avatarSrc}
                 albumArtSrc={item.albumArtSrc}
                 videoSrc={item.videoSrc}
+                mediaFit={item.mediaFit}
                 songDuration={playback[index]?.duration ?? item.duration}
                 currentProgress={playback[index]?.progress ?? 0}
                 isPlaying={playback[index]?.isPlaying ?? false}

@@ -24,7 +24,6 @@ type LocaleContent = {
   text: string;
   emailLabel: string;
   about: {
-    eyebrow: string;
     headline: string;
     subheadline: string;
     body: string[];
@@ -48,7 +47,6 @@ export const siteContent: Record<SiteLanguage, LocaleContent> = {
     text: "شريكك الاستراتيجي في التسويق الرياضي",
     emailLabel: "راسلنا",
     about: {
-      eyebrow: "من نحن",
       headline: "من نحن",
       subheadline: "",
       body: [
@@ -91,7 +89,6 @@ export const siteContent: Record<SiteLanguage, LocaleContent> = {
     text: "Your strategic sports marketing partner",
     emailLabel: "Email us",
     about: {
-      eyebrow: "About Us",
       headline: "About Us",
       subheadline: "",
       body: [

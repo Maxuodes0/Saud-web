@@ -54,7 +54,6 @@ const CONTENT: Record<SiteLanguage, ContactLocale> = {
     info: [
       { label: "البريد", value: "info@sprint-s.sa", href: "mailto:info@sprint-s.sa" },
       { label: "الموقع", value: "الرياض، السعودية" },
-      { label: "الرد", value: "خلال يوم عمل" },
     ],
     fields: {
       name: "الاسم",
@@ -82,7 +81,6 @@ const CONTENT: Record<SiteLanguage, ContactLocale> = {
     info: [
       { label: "Email", value: "info@sprint-s.sa", href: "mailto:info@sprint-s.sa" },
       { label: "Location", value: "Riyadh, Saudi Arabia" },
-      { label: "Response", value: "Within one business day" },
     ],
     fields: {
       name: "Full name",

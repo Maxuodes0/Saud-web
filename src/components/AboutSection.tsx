@@ -58,7 +58,6 @@ export function AboutSection({ language }: AboutSectionProps) {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className={styles.aboutEyebrow}>{about.eyebrow}</span>
             <h2 className={styles.aboutHeadline}>{about.headline}</h2>
           </motion.div>
 
