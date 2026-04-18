@@ -9,5 +9,6 @@ yarn-error.log*
 .next-dev*.log
 .env*
 tsconfig.tsbuildinfo
+tools/
 Work/
-Video/ALHILAL.mp4
+Video/

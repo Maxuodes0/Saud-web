@@ -31,7 +31,7 @@ type PlaybackState = {
   duration: number;
 };
 
-const SUPERCOPA_VIDEO_URL = "/api/videos/supercopa";
+const SUPERCOPA_VIDEO_URL = "/videos/supercopa-de-espana-2026.mp4";
 
 const WORK_ITEMS: Record<SiteLanguage, WorkMediaItem[]> = {
   ar: [
@@ -43,7 +43,7 @@ const WORK_ITEMS: Record<SiteLanguage, WorkMediaItem[]> = {
       albumArtSrc: "/supercopa-de-espana.jpg",
       videoSrc: SUPERCOPA_VIDEO_URL,
       mediaFit: "contain",
-      duration: 92,
+      duration: 205,
     },
     {
       id: "project-2",
@@ -74,7 +74,7 @@ const WORK_ITEMS: Record<SiteLanguage, WorkMediaItem[]> = {
       albumArtSrc: "/supercopa-de-espana.jpg",
       videoSrc: SUPERCOPA_VIDEO_URL,
       mediaFit: "contain",
-      duration: 92,
+      duration: 205,
     },
     {
       id: "project-2",
