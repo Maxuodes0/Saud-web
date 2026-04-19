@@ -5,7 +5,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Share, Heart, SkipBack, SkipForward, Play, Pause } from "lucide-react";
+import { Share, Heart, SkipBack, SkipForward, Play, Pause, Maximize } from "lucide-react";
 import styles from "@/components/ui/music-player-card.module.css";
 
 export interface MusicPlayerCardProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -69,6 +69,35 @@ const MusicPlayerCard = React.forwardRef<HTMLDivElement, MusicPlayerCardProps>(
     const canPlay = Boolean(videoSrc);
     const progressPercentage =
       songDuration > 0 ? Math.max(0, Math.min(100, (currentProgress / songDuration) * 100)) : 0;
+
+    const handleFullscreen = React.useCallback(async () => {
+      const video = videoRef.current;
+
+      if (!video || !canPlay) {
+        return;
+      }
+
+      const webkitVideo = video as HTMLVideoElement & {
+        webkitEnterFullscreen?: () => void;
+      };
+      const fullscreenVideo = video as HTMLVideoElement & {
+        webkitRequestFullscreen?: () => Promise<void> | void;
+      };
+
+      if (typeof webkitVideo.webkitEnterFullscreen === "function") {
+        webkitVideo.webkitEnterFullscreen();
+        return;
+      }
+
+      if (typeof video.requestFullscreen === "function") {
+        await video.requestFullscreen();
+        return;
+      }
+
+      if (typeof fullscreenVideo.webkitRequestFullscreen === "function") {
+        await fullscreenVideo.webkitRequestFullscreen();
+      }
+    }, [canPlay]);
 
     React.useEffect(() => {
       const video = videoRef.current;
@@ -213,6 +242,18 @@ const MusicPlayerCard = React.forwardRef<HTMLDivElement, MusicPlayerCardProps>(
                 disabled={!canPlay}
               >
                 <SkipForward className="h-5 w-5" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                className={styles.controlButton}
+                onClick={() => {
+                  void handleFullscreen();
+                }}
+                aria-label="Open fullscreen video"
+                disabled={!canPlay}
+              >
+                <Maximize className="h-5 w-5" />
               </Button>
             </div>
           </div>
