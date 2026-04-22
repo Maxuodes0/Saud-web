@@ -280,13 +280,6 @@
   text-align: center;
 }
 
-.heroBottom {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  width: 100%;
-}
-
 .heroCopy {
   display: grid;
   gap: clamp(0.875rem, 1.4vw, 1.125rem);
@@ -317,6 +310,7 @@
 .heroPage[dir="rtl"] .heroTitle {
   justify-items: center;
   transform: none;
+  margin-top: 0.35em;
 }
 
 .heroText {
@@ -326,41 +320,9 @@
   line-height: 1.9;
 }
 
-.heroActions {
-  display: grid;
-  width: min(100%, 22rem);
-  justify-items: center;
-  gap: 14px;
-}
-
-.primaryButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 11.25rem;
-  min-height: 3.25rem;
-  padding: 0.875rem 1.375rem;
-  border: 1px solid var(--color-white);
-  background: var(--color-white);
-  color: var(--color-dark);
-  font-family: var(--font-arabic-display), sans-serif;
-  font-size: 1.05rem;
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
-}
-
-.secondaryMeta {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: clamp(0.78rem, 0.2vw + 0.75rem, 0.84rem);
-  letter-spacing: clamp(0.06em, 0.2vw, 0.16em);
-  text-transform: uppercase;
-  transition: opacity 180ms ease;
-}
-
 .heroPage[data-lang="en"] .navLink,
 .heroPage[data-lang="en"] .navCta,
 .heroPage[data-lang="en"] .languageSwitch,
-.heroPage[data-lang="en"] .primaryButton,
-.heroPage[data-lang="en"] .secondaryMeta,
 .heroPage[data-lang="en"] .heroTagline,
 .heroPage[data-lang="en"] .heroText {
   font-family: var(--font-english-body), Arial, sans-serif;
@@ -382,21 +344,6 @@
 
 .heroPage[dir="ltr"] .heroTitle {
   transform: none;
-}
-
-.heroPage[data-lang="en"] .primaryButton {
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-.heroPage[dir="ltr"] .heroBottom,
-.heroPage[dir="rtl"] .heroBottom {
-  justify-content: center;
-}
-
-.heroPage[dir="ltr"] .heroActions,
-.heroPage[dir="rtl"] .heroActions {
-  justify-items: center;
 }
 
 .aboutSection {
@@ -492,6 +439,16 @@
   text-align: right;
 }
 
+.heroPage[dir="rtl"] .aboutStage {
+  grid-template-columns: minmax(0, 0.9fr) minmax(400px, 1.1fr);
+  gap: clamp(32px, 6vw, 88px);
+}
+
+.heroPage[dir="rtl"] .aboutTextPanel {
+  width: min(100%, 620px);
+  margin-top: -1.6rem;
+}
+
 .heroPage[dir="ltr"] .aboutTextPanel {
   justify-self: start;
   text-align: left;
@@ -505,7 +462,7 @@
 .aboutParagraph {
   max-width: none;
   color: rgba(255, 255, 255, 0.9);
-  font-size: clamp(1.18rem, 1.54vw, 1.39rem);
+  font-size: clamp(1.26rem, 1.72vw, 1.5rem);
   line-height: 1.78;
   text-wrap: pretty;
 }
@@ -651,16 +608,6 @@
     line-height: 1.8;
   }
 
-  .heroPage[dir="ltr"] .heroBottom,
-  .heroPage[dir="rtl"] .heroBottom {
-    justify-content: center;
-  }
-
-  .heroPage[dir="ltr"] .heroActions,
-  .heroPage[dir="rtl"] .heroActions {
-    justify-items: center;
-  }
-
   .aboutSection {
     min-height: auto;
   }
@@ -764,22 +711,9 @@
     line-height: 1.72;
   }
 
-  .secondaryMeta,
   .heroTagline,
   .heroText {
     letter-spacing: normal;
-  }
-
-  .primaryButton {
-    min-width: 0;
-    width: 100%;
-    min-height: 3rem;
-    padding: 0.875rem 1.125rem;
-  }
-
-  .secondaryMeta {
-    font-size: 0.78rem;
-    text-align: center;
   }
 
   .aboutHeadline {
@@ -788,7 +722,7 @@
 
   .aboutSubheadline,
   .aboutParagraph {
-    font-size: 1.06rem;
+    font-size: 1.12rem;
     line-height: 1.78;
   }
 

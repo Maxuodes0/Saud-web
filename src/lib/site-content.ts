@@ -43,7 +43,7 @@ export const siteContent: Record<SiteLanguage, LocaleContent> = {
     ],
     cta: "ابدأ مشروعك",
     switchLabel: "English",
-    title: "نحوّل الرياضة إلى أثر\nيراه الجمهور ويثق به الشركاء",
+    title: "نحوّل الرياضة إلى أثر",
     text: "شريكك الاستراتيجي في التسويق الرياضي",
     emailLabel: "راسلنا",
     about: {

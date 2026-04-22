@@ -34,7 +34,7 @@ export function HeroSection({ language, onToggleLanguage }: HeroSectionProps) {
         style={{ y: backgroundY, scale: backgroundScale }}
       >
         <Image
-          src="/sec23.jpg"
+          src="/hesosec67.png"
           alt="Sprint S stadium background"
           fill
           priority
@@ -109,32 +109,6 @@ export function HeroSection({ language, onToggleLanguage }: HeroSectionProps) {
           </motion.div>
         </div>
 
-        <div className={styles.heroBottom}>
-          <motion.div
-            className={styles.heroActions}
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ ...entranceTransition, delay: 0.34 }}
-          >
-            <motion.a
-              href="#contact"
-              className={styles.primaryButton}
-              whileHover={{ y: -2, scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 0.22, ease: "easeOut" }}
-            >
-              {content.cta}
-            </motion.a>
-            <motion.a
-              href="mailto:info@sprint-s.sa"
-              className={styles.secondaryMeta}
-              whileHover={{ opacity: 1, y: -1 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-            >
-              {content.emailLabel} / info@sprint-s.sa
-            </motion.a>
-          </motion.div>
-        </div>
       </motion.div>
     </section>
   );
