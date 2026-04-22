@@ -34,7 +34,7 @@ export function HeroSection({ language, onToggleLanguage }: HeroSectionProps) {
         style={{ y: backgroundY, scale: backgroundScale }}
       >
         <Image
-          src="/hesosec67.png"
+          src="/herosec55.png"
           alt="Sprint S stadium background"
           fill
           priority

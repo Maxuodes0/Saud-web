@@ -41,7 +41,7 @@ export function AboutSection({ language }: AboutSectionProps) {
     <section id="about" className={styles.aboutSection}>
       <div className={styles.aboutBackgroundLayer}>
         <Image
-          src="/sec21.jpg"
+          src="/secsec.png"
           alt="Sprint S about section background"
           fill
           className={styles.aboutBackgroundImage}

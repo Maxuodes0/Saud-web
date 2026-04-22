@@ -26,10 +26,10 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
     items: [
       {
         id: "super-cup",
-        title: "السوبر الإسباني في جدة",
+        title: "كأس السوبر الإسباني 2026",
         description:
-          "تغطية بصرية سريعة ودقيقة صُممت لتواكب حجم الحدث وتنتج مواد جاهزة للنشر أثناء اللحظة نفسها.",
-        imgSrc: "/services-background.jpg",
+          "قدّمنا فيـلم للسوبر الإسباني المقام في جدة مستلهمين من ثقافة جدة الرحبة والمضيافة، ومن إرث إسبانيا الغني وعراقة رياضة كرة القدم فيها، ودمجناهم في عناصر سردية ومرئية لنقدم قصة واحدة متكاملة: السوبر الإسباني يمر بجدة البلد، وينتهي بملعب الإنماء",
+        imgSrc: "/esspain.jpg",
         icon: <Camera size={22} strokeWidth={2} />,
         linkHref: "#",
       },
@@ -79,10 +79,10 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
     items: [
       {
         id: "super-cup",
-        title: "Spanish Super Cup in Jeddah",
+        title: "Supercopa de España 2026",
         description:
-          "Fast, accurate visual coverage built to match the scale of the event and publish in the moment.",
-        imgSrc: "/services-background.jpg",
+          "We delivered a film for the Spanish Super Cup in Jeddah, drawing from Jeddah's welcoming culture, Spain's rich heritage, and the long tradition of football to tell one cohesive story from Al-Balad to Alinma Stadium.",
+        imgSrc: "/esspain.jpg",
         icon: <Camera size={22} strokeWidth={2} />,
         linkHref: "#",
       },

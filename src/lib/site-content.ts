@@ -85,7 +85,7 @@ export const siteContent: Record<SiteLanguage, LocaleContent> = {
     ],
     cta: "Start a project",
     switchLabel: "العربية",
-    title: "We turn sport into brand impact\nAudiences feel and partners trust.",
+    title: "We turn sport into brand impact",
     text: "Your strategic sports marketing partner",
     emailLabel: "Email us",
     about: {

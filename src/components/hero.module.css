@@ -229,7 +229,7 @@
   min-height: 100svh;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: clamp(1.5rem, 4vw, 2.5rem);
   padding-block: clamp(6.5rem, 9vw, 8.625rem) clamp(1.5rem, 3vw, 2.25rem);
   text-align: center;
@@ -241,6 +241,10 @@
   gap: clamp(0.75rem, 1vw, 0.875rem);
   width: 100%;
   justify-items: center;
+}
+
+.heroPage[dir="rtl"] .heroTop {
+  margin-top: clamp(0.3rem, 1.2vh, 0.85rem);
 }
 
 .heroLogoWrap {
@@ -592,6 +596,10 @@
     justify-content: center;
   }
 
+  .heroPage[dir="rtl"] .heroTop {
+    margin-top: 0.25rem;
+  }
+
   .heroTitle {
     font-size: clamp(2.35rem, 10.4vw, 4rem);
     line-height: 0.95;
@@ -698,6 +706,10 @@
   .heroTitle {
     font-size: clamp(1.95rem, 10vw, 2.9rem);
     line-height: 0.96;
+  }
+
+  .heroPage[dir="rtl"] .heroTop {
+    margin-top: 0.05rem;
   }
 
   .heroLogoWrap {
