@@ -10,7 +10,6 @@ export interface CardItem {
   title: string;
   description: string;
   imgSrc: string;
-  icon: React.ReactNode;
   linkHref: string;
 }
 
@@ -45,7 +44,7 @@ export const ExpandingCards = React.forwardRef<HTMLUListElement, ExpandingCardsP
       if (isDesktop) {
         return {
           gridTemplateColumns: items
-            .map((_, index) => (index === activeIndex ? "4.6fr" : "1fr"))
+            .map((_, index) => (index === activeIndex ? "5.4fr" : "1fr"))
             .join(" "),
           gridTemplateRows: "1fr",
         };
@@ -97,7 +96,6 @@ export const ExpandingCards = React.forwardRef<HTMLUListElement, ExpandingCardsP
                 <h3 className={cn(styles.railTitle, isArabic && styles.railTitleAr)}>
                   {item.title}
                 </h3>
-                <div className={styles.iconWrap}>{item.icon}</div>
                 <h3 className={cn(styles.title, isArabic && styles.titleAr)}>{item.title}</h3>
                 <p className={cn(styles.description, isArabic && styles.descriptionAr)}>
                   {item.description}

@@ -87,15 +87,9 @@
   opacity: 0;
 }
 
-.iconWrap {
-  color: rgba(246, 242, 234, 0.92);
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.3s ease 0.06s, transform 0.3s ease 0.06s;
-}
-
 .title {
   margin: 0;
+  max-width: min(100%, 18ch);
   color: #fffaf2;
   font-size: 1.4rem;
   font-weight: 600;
@@ -112,21 +106,22 @@
 }
 
 .description {
-  max-width: 28ch;
+  max-width: min(100%, 42ch);
   color: rgba(246, 242, 234, 0.78);
   font-size: 0.94rem;
   line-height: 1.75;
   opacity: 0;
   transform: translateY(12px);
   transition: opacity 0.3s ease 0.18s, transform 0.3s ease 0.18s;
+  text-wrap: pretty;
 }
 
 .descriptionAr {
+  max-width: min(100%, 64ch);
   font-family: var(--font-arabic-display), sans-serif;
   line-height: 1.9;
 }
 
-.card[data-active="true"] .iconWrap,
 .card[data-active="true"] .title,
 .card[data-active="true"] .description {
   opacity: 1;

@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Building2, Camera, Megaphone, ShieldCheck, Sparkles } from "lucide-react";
 import { ExpandingCards, type CardItem } from "@/components/ui/expanding-cards";
 import styles from "@/components/projects-section.module.css";
 import type { SiteLanguage } from "@/lib/site-content";
@@ -30,7 +29,6 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
         description:
           "قدّمنا فيـلم للسوبر الإسباني المقام في جدة مستلهمين من ثقافة جدة الرحبة والمضيافة، ومن إرث إسبانيا الغني وعراقة رياضة كرة القدم فيها، ودمجناهم في عناصر سردية ومرئية لنقدم قصة واحدة متكاملة: السوبر الإسباني يمر بجدة البلد، وينتهي بملعب الإنماء",
         imgSrc: "/esspain.jpg",
-        icon: <Camera size={22} strokeWidth={2} />,
         linkHref: "#",
       },
       {
@@ -39,7 +37,6 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
         description:
           "نظام سرد بصري يومي يحافظ على هوية النادي ويترجم الطاقة الجماهيرية إلى حضور رقمي متماسك.",
         imgSrc: "/hero-background.jpg",
-        icon: <ShieldCheck size={22} strokeWidth={2} />,
         linkHref: "#",
       },
       {
@@ -48,7 +45,6 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
         description:
           "بناء حضور تجاري وإعلامي متصل بالمشهد الرياضي عبر رسائل واضحة ومخرجات قابلة للتوسع عبر القنوات المختلفة.",
         imgSrc: "/sec23.jpg",
-        icon: <Megaphone size={22} strokeWidth={2} />,
         linkHref: "#",
       },
       {
@@ -57,7 +53,6 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
         description:
           "تحويل تفاصيل المكان والجمهور والحركة إلى تجربة نشر متصلة بصريًا وتحريريًا قبل وأثناء وبعد المباراة.",
         imgSrc: "/sec21.jpg",
-        icon: <Sparkles size={22} strokeWidth={2} />,
         linkHref: "#",
       },
       {
@@ -66,7 +61,6 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
         description:
           "تجهيز المكان بصريًا ليعمل كجزء من قيمة الحدث ويضيف بعدًا واضحًا لتجربة الحضور والتوثيق.",
         imgSrc: "/about-us-image.jpg",
-        icon: <Building2 size={22} strokeWidth={2} />,
         linkHref: "#",
       },
     ],
@@ -83,7 +77,6 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
         description:
           "We delivered a film for the Spanish Super Cup in Jeddah, drawing from Jeddah's welcoming culture, Spain's rich heritage, and the long tradition of football to tell one cohesive story from Al-Balad to Alinma Stadium.",
         imgSrc: "/esspain.jpg",
-        icon: <Camera size={22} strokeWidth={2} />,
         linkHref: "#",
       },
       {
@@ -92,7 +85,6 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
         description:
           "A daily visual publishing system that keeps the club identity sharp and the audience engaged.",
         imgSrc: "/hero-background.jpg",
-        icon: <ShieldCheck size={22} strokeWidth={2} />,
         linkHref: "#",
       },
       {
@@ -101,7 +93,6 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
         description:
           "Commercial and editorial presence shaped into a campaign system that scales across channels.",
         imgSrc: "/sec23.jpg",
-        icon: <Megaphone size={22} strokeWidth={2} />,
         linkHref: "#",
       },
       {
@@ -110,7 +101,6 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
         description:
           "Venue, crowd, and energy turned into a cohesive publishing experience before, during, and after the game.",
         imgSrc: "/sec21.jpg",
-        icon: <Sparkles size={22} strokeWidth={2} />,
         linkHref: "#",
       },
       {
@@ -119,7 +109,6 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
         description:
           "Designing the visual presence of the place itself so it adds clear value to the event experience.",
         imgSrc: "/about-us-image.jpg",
-        icon: <Building2 size={22} strokeWidth={2} />,
         linkHref: "#",
       },
     ],
