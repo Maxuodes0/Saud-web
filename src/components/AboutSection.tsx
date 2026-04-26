@@ -10,16 +10,27 @@ type AboutSectionProps = {
   language: SiteLanguage;
 };
 
-function renderParagraph(paragraph: string) {
-  const parts = paragraph.split("SPRINT-S");
+function chunkWords(text: string, wordsPerLine = 9) {
+  const words = text.trim().split(/\s+/);
+  const lines: string[] = [];
+
+  for (let index = 0; index < words.length; index += wordsPerLine) {
+    lines.push(words.slice(index, index + wordsPerLine).join(" "));
+  }
+
+  return lines;
+}
+
+function renderParagraphLine(line: string, lineIndex: number) {
+  const parts = line.split("SPRINT-S");
 
   return parts.flatMap((part, index) => {
-    const nodes = [<span key={`text-${index}`}>{part}</span>];
+    const nodes = [<span key={`line-${lineIndex}-text-${index}`}>{part}</span>];
 
     if (index < parts.length - 1) {
       nodes.push(
         <Image
-          key={`logo-${index}`}
+          key={`line-${lineIndex}-logo-${index}`}
           src="/sprint-s-logo-white.png"
           alt="Sprint S"
           width={146}
@@ -27,6 +38,20 @@ function renderParagraph(paragraph: string) {
           className={styles.aboutInlineBrand}
         />,
       );
+    }
+
+    return nodes;
+  });
+}
+
+function renderParagraph(paragraph: string) {
+  const lines = chunkWords(paragraph);
+
+  return lines.flatMap((line, lineIndex) => {
+    const nodes = renderParagraphLine(line, lineIndex);
+
+    if (lineIndex < lines.length - 1) {
+      nodes.push(<br key={`line-${lineIndex}-break`} />);
     }
 
     return nodes;

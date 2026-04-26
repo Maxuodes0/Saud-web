@@ -54,9 +54,9 @@ function useHoverSliderContext() {
 const SLIDES: Record<SiteLanguage, ServiceSlide[]> = {
   ar: [
     {
-      id: "athlete-management",
-      title: "تمثيل وإدارة الرياضيين",
-      body: "إدارة الحضور التجاري والإعلامي للرياضيين، وتنظيم الشراكات والفرص التي تعزّز قيمة الاسم الرياضي داخل الملعب وخارجه.",
+      id: "content-strategy",
+      title: "استراتيجية النشر وصناعة المحتوى",
+      body: "تخطيط المحتوى الرياضي وصناعته وفق رحلة واضحة من الفكرة إلى النشر بما يتوافق مع المنصة والهدف والجمهور المستهدف.",
     },
     {
       id: "digital-marketing",
@@ -67,11 +67,6 @@ const SLIDES: Record<SiteLanguage, ServiceSlide[]> = {
       id: "media-coverage",
       title: "التغطية الإعلامية للفعاليات",
       body: "تغطية ميدانية شاملة للفعاليات الرياضية عبر التصوير والتحرير السريع وإنتاج مواد جاهزة للنشر اللحظي عبر القنوات المختلفة.",
-    },
-    {
-      id: "content-strategy",
-      title: "استراتيجية النشر وصناعة المحتوى",
-      body: "تخطيط المحتوى الرياضي وصناعته وفق رحلة واضحة من الفكرة إلى النشر بما يتوافق مع المنصة والهدف والجمهور المستهدف.",
     },
     {
       id: "brand-strategy",
@@ -88,12 +83,17 @@ const SLIDES: Record<SiteLanguage, ServiceSlide[]> = {
       title: "التسويق عبر المؤثرين",
       body: "اختيار المؤثرين المناسبين وبناء حملات تعاون تحقق وصولًا نوعيًا وتفاعلًا مرتبطًا بأهداف النشاط الرياضي.",
     },
+    {
+      id: "athlete-management",
+      title: "تمثيل وإدارة الرياضيين",
+      body: "إدارة الحضور التجاري والإعلامي للرياضيين، وتنظيم الشراكات والفرص التي تعزّز قيمة الاسم الرياضي داخل الملعب وخارجه.",
+    },
   ],
   en: [
     {
-      id: "athlete-management",
-      title: "Athlete Management",
-      body: "Managing the commercial and media presence of athletes while structuring partnerships that strengthen their value on and off the field.",
+      id: "content-strategy",
+      title: "Content Strategy",
+      body: "Planning and producing sports content through a clear path from concept to publishing, aligned with platform, goal, and audience.",
     },
     {
       id: "digital-marketing",
@@ -104,11 +104,6 @@ const SLIDES: Record<SiteLanguage, ServiceSlide[]> = {
       id: "media-coverage",
       title: "Event Media Coverage",
       body: "Full on-ground sports coverage through filming, fast editing, and instant-ready publishing assets across channels.",
-    },
-    {
-      id: "content-strategy",
-      title: "Content Strategy",
-      body: "Planning and producing sports content through a clear path from concept to publishing, aligned with platform, goal, and audience.",
     },
     {
       id: "brand-strategy",
@@ -124,6 +119,11 @@ const SLIDES: Record<SiteLanguage, ServiceSlide[]> = {
       id: "influencer-marketing",
       title: "Influencer Marketing",
       body: "Selecting the right creators and building collaborations that drive qualified reach and engagement tied to sports objectives.",
+    },
+    {
+      id: "athlete-management",
+      title: "Athlete Management",
+      body: "Managing the commercial and media presence of athletes while structuring partnerships that strengthen their value on and off the field.",
     },
   ],
 };

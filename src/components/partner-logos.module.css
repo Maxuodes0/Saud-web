@@ -1,0 +1,22 @@
+.section {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.headingWrap {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.heading {
+  margin: 0;
+  color: rgba(246, 242, 234, 0.96);
+  font-size: clamp(1.2rem, 2vw, 1.65rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.headingAr {
+  font-family: var(--font-arabic-display), sans-serif;
+}

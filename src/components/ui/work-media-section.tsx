@@ -2,8 +2,6 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
-import { Building2, Camera, Landmark, Megaphone, Shield, Trophy } from "lucide-react";
-import { Logos3 } from "@/components/ui/logos3";
 import { MusicPlayerCard } from "@/components/ui/music-player-card";
 import { cn } from "@/lib/utils";
 import type { SiteLanguage } from "@/lib/site-content";
@@ -37,12 +35,12 @@ const WORK_ITEMS: Record<SiteLanguage, WorkMediaItem[]> = {
   ar: [
     {
       id: "project-1",
-      artistName: "السوبر الإسباني",
+      artistName: "كأس السوبر الإسباني 2026",
       artistHandle: "تغطية حدث",
       avatarSrc: "/sprint-s-logo-white.png",
       albumArtSrc: "/esspain.jpg",
       videoSrc: SUPERCOPA_VIDEO_URL,
-      mediaFit: "contain",
+      mediaFit: "cover",
       duration: 205,
     },
     {
@@ -56,12 +54,12 @@ const WORK_ITEMS: Record<SiteLanguage, WorkMediaItem[]> = {
     },
     {
       id: "project-3",
-      artistName: "تجربة المكان",
+      artistName: "كأس السوبر الايطالي 2026",
       artistHandle: "تفعيل بصري",
       avatarSrc: "/sprint-s-logo-white.png",
-      albumArtSrc: "/supercoppa-italiana.jpg",
+      albumArtSrc: "/venue-activation.png",
       videoSrc: "",
-      mediaFit: "contain",
+      mediaFit: "cover",
       duration: 78,
     },
   ],
@@ -73,7 +71,7 @@ const WORK_ITEMS: Record<SiteLanguage, WorkMediaItem[]> = {
       avatarSrc: "/sprint-s-logo-white.png",
       albumArtSrc: "/esspain.jpg",
       videoSrc: SUPERCOPA_VIDEO_URL,
-      mediaFit: "contain",
+      mediaFit: "cover",
       duration: 205,
     },
     {
@@ -87,90 +85,13 @@ const WORK_ITEMS: Record<SiteLanguage, WorkMediaItem[]> = {
     },
     {
       id: "project-3",
-      artistName: "Venue Activation",
+      artistName: "Supercoppa Italiana 2026",
       artistHandle: "Branded Experience",
       avatarSrc: "/sprint-s-logo-white.png",
-      albumArtSrc: "/supercoppa-italiana.jpg",
+      albumArtSrc: "/venue-activation.png",
       videoSrc: "",
-      mediaFit: "contain",
+      mediaFit: "cover",
       duration: 78,
-    },
-  ],
-};
-
-const CLIENT_LOGOS: Record<
-  SiteLanguage,
-  Array<{ id: string; description: string; label: string; icon: React.ReactNode }>
-> = {
-  ar: [
-    {
-      id: "client-ministry",
-      description: "وزارة الرياضة",
-      label: "وزارة الرياضة",
-      icon: <Landmark size={18} strokeWidth={2} />,
-    },
-    { id: "client-hilal", description: "الهلال", label: "الهلال", icon: <Shield size={18} strokeWidth={2} /> },
-    {
-      id: "client-events",
-      description: "البطولات",
-      label: "البطولات",
-      icon: <Trophy size={18} strokeWidth={2} />,
-    },
-    {
-      id: "client-coverage",
-      description: "التغطيات",
-      label: "التغطيات",
-      icon: <Camera size={18} strokeWidth={2} />,
-    },
-    {
-      id: "client-entities",
-      description: "الجهات الرياضية",
-      label: "الجهات الرياضية",
-      icon: <Building2 size={18} strokeWidth={2} />,
-    },
-    {
-      id: "client-campaigns",
-      description: "الحملات",
-      label: "الحملات",
-      icon: <Megaphone size={18} strokeWidth={2} />,
-    },
-  ],
-  en: [
-    {
-      id: "client-ministry",
-      description: "Ministry of Sport",
-      label: "Ministry of Sport",
-      icon: <Landmark size={18} strokeWidth={2} />,
-    },
-    {
-      id: "client-hilal",
-      description: "Al Hilal",
-      label: "Al Hilal",
-      icon: <Shield size={18} strokeWidth={2} />,
-    },
-    {
-      id: "client-events",
-      description: "Championships",
-      label: "Championships",
-      icon: <Trophy size={18} strokeWidth={2} />,
-    },
-    {
-      id: "client-coverage",
-      description: "Coverage",
-      label: "Coverage",
-      icon: <Camera size={18} strokeWidth={2} />,
-    },
-    {
-      id: "client-entities",
-      description: "Sports Entities",
-      label: "Sports Entities",
-      icon: <Building2 size={18} strokeWidth={2} />,
-    },
-    {
-      id: "client-campaigns",
-      description: "Campaigns",
-      label: "Campaigns",
-      icon: <Megaphone size={18} strokeWidth={2} />,
     },
   ],
 };
@@ -195,7 +116,6 @@ const cardVariants = {
 
 export function WorksMediaSection({ language }: WorksMediaSectionProps) {
   const items = WORK_ITEMS[language];
-  const clientLogos = CLIENT_LOGOS[language];
   const isArabic = language === "ar";
   const introOffset = isArabic ? 36 : -36;
   const [playback, setPlayback] = React.useState<PlaybackState[]>(
@@ -337,21 +257,6 @@ export function WorksMediaSection({ language }: WorksMediaSectionProps) {
               />
             </motion.div>
           ))}
-        </motion.div>
-
-        <motion.div
-          className={styles.clientsBlock}
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.18 }}
-          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-        >
-          <div className={styles.clientsDivider} />
-          <Logos3
-            heading={isArabic ? "شركاؤنا في النجاح" : "Trusted by our partners"}
-            logos={clientLogos}
-          />
-          <div className={styles.clientsDivider} />
         </motion.div>
       </div>
     </section>

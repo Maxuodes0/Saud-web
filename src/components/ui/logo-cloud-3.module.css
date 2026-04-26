@@ -1,55 +1,48 @@
 .cloud {
   overflow: hidden;
-  padding-block: 18px;
-  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  padding-block: 0.75rem;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
-.logoItem {
+.logoFrame {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  min-height: 52px;
-  padding: 0 18px;
-  border: 1px solid rgba(246, 242, 234, 0.12);
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  flex: 0 0 200px;
+  padding: 1.25rem;
+  border: 1px solid rgba(246, 242, 234, 0.14);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(246, 242, 234, 0.88);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  user-select: none;
-}
-
-.logoIcon {
-  display: inline-flex;
-  color: #4db8ff;
-}
-
-.logoLabel {
-  font-size: 0.94rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.055);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 18px 52px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(12px);
 }
 
 .logoImage {
   display: block;
-  height: 20px;
-  width: auto;
-  opacity: 0.92;
+  width: 100%;
+  max-width: 160px;
+  height: 100%;
+  max-height: 160px;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
 }
 
 @media (max-width: 640px) {
-  .cloud {
-    padding-block: 14px;
+  .logoFrame {
+    width: 150px;
+    height: 150px;
+    flex-basis: 150px;
+    padding: 1rem;
   }
 
-  .logoItem {
-    min-height: 46px;
-    padding: 0 14px;
-    gap: 8px;
-  }
-
-  .logoLabel {
-    font-size: 0.84rem;
+  .logoImage {
+    max-width: 120px;
+    max-height: 120px;
   }
 }

@@ -32,35 +32,27 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
         linkHref: "#",
       },
       {
-        id: "hilal-content",
-        title: "محتوى نادي الهلال",
+        id: "venue-activation",
+        title: "كأس السوبر الايطالي 2026",
         description:
-          "نظام سرد بصري يومي يحافظ على هوية النادي ويترجم الطاقة الجماهيرية إلى حضور رقمي متماسك.",
-        imgSrc: "/hero-background.jpg",
+          "أنتجنا فيلمين احترافيين لنصف نهائي كأس السوبر الإيطالي والنهائي بمستوى عالمي، استعرضنا فيهما لحظات الحماس وبناء التشويق عبر سرد بصري مشوّق، مع توظيف مؤثرات بصرية وسمعية متقدمة، ومزج عناصر من الثقافتين السعودية والإيطالية.",
+        imgSrc: "/venue-activation.png",
+        linkHref: "#",
+      },
+      {
+        id: "hilal-content",
+        title: "سباق درب العلا 2026",
+        description:
+          "ساهمنا في تقديم الحدث كوجهة رياضية عالمية من خلال إنتاج محتوى سينمائي يعكس هوية المكان وقوة التجربة، ويعزّز الحضور الإعلامي للسباق بأسلوب بصري ملهم وتجربة متكاملة.",
+        imgSrc: "/alula-trail-race-2026.png",
         linkHref: "#",
       },
       {
         id: "brand-campaign",
-        title: "حملة حضور للعلامة الرياضية",
+        title: "كتابة محتوى تفاعلي",
         description:
-          "بناء حضور تجاري وإعلامي متصل بالمشهد الرياضي عبر رسائل واضحة ومخرجات قابلة للتوسع عبر القنوات المختلفة.",
-        imgSrc: "/sec23.jpg",
-        linkHref: "#",
-      },
-      {
-        id: "matchday-story",
-        title: "سرد يوم المباراة",
-        description:
-          "تحويل تفاصيل المكان والجمهور والحركة إلى تجربة نشر متصلة بصريًا وتحريريًا قبل وأثناء وبعد المباراة.",
-        imgSrc: "/sec21.jpg",
-        linkHref: "#",
-      },
-      {
-        id: "venue-activation",
-        title: "تفعيل تجربة المكان",
-        description:
-          "تجهيز المكان بصريًا ليعمل كجزء من قيمة الحدث ويضيف بعدًا واضحًا لتجربة الحضور والتوثيق.",
-        imgSrc: "/about-us-image.jpg",
+          "قدّمنا محتوى متكاملًا من الفكرة إلى النشر، شمل تنفيذ الفيديوهات وكتابة التغريدات.",
+        imgSrc: "/interactive-content-writing-2.png",
         linkHref: "#",
       },
     ],
@@ -80,35 +72,27 @@ const CONTENT: Record<SiteLanguage, ProjectsContent> = {
         linkHref: "#",
       },
       {
-        id: "hilal-content",
-        title: "Al Hilal Content System",
+        id: "venue-activation",
+        title: "Supercoppa Italiana 2026",
         description:
-          "A daily visual publishing system that keeps the club identity sharp and the audience engaged.",
-        imgSrc: "/hero-background.jpg",
+          "We produced two world-class films for the Supercoppa Italiana semifinal and final, capturing the energy and building anticipation through cinematic visual storytelling, advanced visual and sound effects, and a blend of Saudi and Italian cultural elements.",
+        imgSrc: "/venue-activation.png",
+        linkHref: "#",
+      },
+      {
+        id: "hilal-content",
+        title: "AlUla Trail Race 2026",
+        description:
+          "We helped present the event as a global sports destination through cinematic content that reflects the identity of the place and the strength of the experience, enhancing the race's media presence with an inspiring visual style and an integrated experience.",
+        imgSrc: "/alula-trail-race-2026.png",
         linkHref: "#",
       },
       {
         id: "brand-campaign",
-        title: "Sports Brand Presence Campaign",
+        title: "Interactive Content Writing",
         description:
-          "Commercial and editorial presence shaped into a campaign system that scales across channels.",
-        imgSrc: "/sec23.jpg",
-        linkHref: "#",
-      },
-      {
-        id: "matchday-story",
-        title: "Matchday Storytelling",
-        description:
-          "Venue, crowd, and energy turned into a cohesive publishing experience before, during, and after the game.",
-        imgSrc: "/sec21.jpg",
-        linkHref: "#",
-      },
-      {
-        id: "venue-activation",
-        title: "Venue Activation",
-        description:
-          "Designing the visual presence of the place itself so it adds clear value to the event experience.",
-        imgSrc: "/about-us-image.jpg",
+          "We delivered integrated content from concept to publishing, including video execution and tweet writing.",
+        imgSrc: "/interactive-content-writing-2.png",
         linkHref: "#",
       },
     ],

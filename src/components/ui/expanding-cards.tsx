@@ -10,6 +10,7 @@ export interface CardItem {
   title: string;
   description: string;
   imgSrc: string;
+  imageFit?: "cover" | "contain";
   linkHref: string;
 }
 
@@ -88,7 +89,7 @@ export const ExpandingCards = React.forwardRef<HTMLUListElement, ExpandingCardsP
                 alt={item.title}
                 fill
                 sizes="(max-width: 767px) 100vw, 22vw"
-                className={styles.image}
+                className={cn(styles.image, item.imageFit === "contain" && styles.imageContain)}
               />
               <div className={styles.overlay} />
 

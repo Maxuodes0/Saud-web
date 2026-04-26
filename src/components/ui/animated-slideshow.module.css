@@ -103,7 +103,7 @@
 
 .characterBase {
   display: inline-block;
-  opacity: 0.24;
+  opacity: 1.9;
 }
 
 .characterActive {
@@ -119,10 +119,13 @@
   display: grid;
   gap: 0.75rem;
   align-content: start;
+  justify-self: stretch;
   width: 100%;
 }
 
 .descriptionCard {
+  justify-self: end;
+  width: min(100%, 46rem);
   display: grid;
   gap: 0.75rem;
   min-height: 0;
@@ -156,7 +159,7 @@
 }
 
 .rtl {
-  direction: rtl;
+  direction: ltr;
 }
 
 .rtl .titlesColumn,
@@ -164,6 +167,7 @@
 .rtl .titleButton,
 .rtl .titleInner,
 .rtl .descriptionCard {
+  direction: rtl;
   text-align: right;
 }
 
@@ -203,12 +207,12 @@
   }
 
   .rtl.layout {
-    grid-template-columns: minmax(18rem, 32rem) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 32rem);
     grid-template-areas: "media titles";
   }
 
   .ltr.layout {
-    grid-template-columns: minmax(0, 1fr) minmax(18rem, 32rem);
+    grid-template-columns: minmax(18rem, 32rem) minmax(0, 1fr);
     grid-template-areas: "titles media";
   }
 
@@ -233,7 +237,7 @@
 
   .mediaColumn {
     gap: 1rem;
-    max-width: 34rem;
+    max-width: none;
   }
 
   .cardTitle {

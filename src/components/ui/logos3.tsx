@@ -32,6 +32,7 @@ const Logos3 = ({
   itemLabelClassName,
 }: Logos3Props) => {
   const isArabic = /[\u0600-\u06FF]/.test(heading);
+  const carouselLogos = logos.length > 0 ? [...logos, ...logos] : [];
 
   return (
     <section className={cn(styles.section, className)}>
@@ -56,11 +57,11 @@ const Logos3 = ({
           ]}
         >
           <CarouselContent className={styles.content}>
-            {logos.map((logo) => {
+            {carouselLogos.map((logo, index) => {
               const isArabicLabel = /[\u0600-\u06FF]/.test(logo.label ?? logo.description);
 
               return (
-                <CarouselItem key={logo.id} className={styles.item}>
+                <CarouselItem key={`${logo.id}-${index}`} className={styles.item}>
                   <div className={styles.logoShell}>
                     <div className={styles.logoCard} aria-label={logo.description}>
                       {logo.image ? (
@@ -68,8 +69,8 @@ const Logos3 = ({
                           <Image
                             src={logo.image}
                             alt={logo.description}
-                            width={140}
-                            height={28}
+                            width={200}
+                            height={200}
                             className={cn(styles.logoImage, logo.className)}
                           />
                         </div>

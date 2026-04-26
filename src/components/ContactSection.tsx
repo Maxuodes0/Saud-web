@@ -24,6 +24,7 @@ type ContactLocale = {
   note: string;
   submit: string;
   direct: string;
+  whatsapp: string;
   infoTitle: string;
   info: Array<{ label: string; value: string; href?: string }>;
   fields: {
@@ -42,6 +43,9 @@ type ContactLocale = {
   };
 };
 
+const CONTACT_PHONE = "+966 53 704 4997";
+const WHATSAPP_URL = "https://wa.me/966537044997";
+
 const CONTENT: Record<SiteLanguage, ContactLocale> = {
   ar: {
     label: "تواصل معنا",
@@ -50,9 +54,11 @@ const CONTENT: Record<SiteLanguage, ContactLocale> = {
     note: "عند الإرسال سيتم فتح بريدك الإلكتروني برسالة مجهزة بالبيانات التي أدخلتها.",
     submit: "إرسال الطلب",
     direct: "أو راسلنا مباشرة",
+    whatsapp: "تواصل عبر واتساب",
     infoTitle: "معلومات التواصل",
     info: [
       { label: "البريد", value: "info@sprint-s.sa", href: "mailto:info@sprint-s.sa" },
+      { label: "واتساب", value: CONTACT_PHONE, href: WHATSAPP_URL },
       { label: "الموقع", value: "الرياض، السعودية" },
     ],
     fields: {
@@ -63,23 +69,25 @@ const CONTENT: Record<SiteLanguage, ContactLocale> = {
       message: "تفاصيل المشروع",
     },
     placeholders: {
-      name: "اكتب اسمك الكامل",
-      company: "اسم الجهة أو النادي أو العلامة",
-      email: "name@example.com",
-      phone: "+966",
-      message: "اشرح نوع المشروع، الهدف، والمدة المتوقعة.",
+      name: "",
+      company: "",
+      email: "",
+      phone: "",
+      message: "",
     },
   },
   en: {
     label: "Contact Us",
-    headline: "Tell us about your project",
+    headline: "Let's Sprint",
     body: "Fill in the core details about your project and we will come back with the next step based on the scope and type of work.",
     note: "Submitting the form will open your email client with a pre-filled message using the details you entered.",
-    submit: "Send inquiry",
+    submit: "Sprint us",
     direct: "Or email us directly",
+    whatsapp: "Contact us on WhatsApp",
     infoTitle: "Contact details",
     info: [
       { label: "Email", value: "info@sprint-s.sa", href: "mailto:info@sprint-s.sa" },
+      { label: "WhatsApp", value: CONTACT_PHONE, href: WHATSAPP_URL },
       { label: "Location", value: "Riyadh, Saudi Arabia" },
     ],
     fields: {
@@ -90,11 +98,11 @@ const CONTENT: Record<SiteLanguage, ContactLocale> = {
       message: "Project details",
     },
     placeholders: {
-      name: "Write your full name",
-      company: "Club, brand, or company name",
-      email: "name@example.com",
-      phone: "+966",
-      message: "Share the project type, objective, and expected timeline.",
+      name: "",
+      company: "",
+      email: "",
+      phone: "",
+      message: "",
     },
   },
 };
@@ -249,6 +257,14 @@ export function ContactSection({ language }: ContactSectionProps) {
               <a href="mailto:info@sprint-s.sa" className={styles.directLink}>
                 {content.direct}
               </a>
+              <a
+                href={WHATSAPP_URL}
+                className={styles.directLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {content.whatsapp}
+              </a>
             </div>
 
             <p className={`${styles.note} ${submitted ? styles.noteActive : ""}`}>{content.note}</p>
@@ -272,7 +288,13 @@ export function ContactSection({ language }: ContactSectionProps) {
                     {item.label}
                   </span>
                   {item.href ? (
-                    <a href={item.href} className={styles.infoValueLink}>
+                    <a
+                      href={item.href}
+                      className={styles.infoValueLink}
+                      dir="ltr"
+                      target={item.href.startsWith("https://") ? "_blank" : undefined}
+                      rel={item.href.startsWith("https://") ? "noreferrer" : undefined}
+                    >
                       {item.value}
                     </a>
                   ) : (

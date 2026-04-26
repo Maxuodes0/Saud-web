@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
+import { PartnerLogos } from "@/components/PartnerLogos";
 import styles from "@/components/hero.module.css";
 import type { SiteLanguage } from "@/lib/site-content";
 import { siteContent } from "@/lib/site-content";
@@ -109,6 +110,15 @@ export function HeroSection({ language, onToggleLanguage }: HeroSectionProps) {
           </motion.div>
         </div>
 
+      </motion.div>
+
+      <motion.div
+        className={styles.heroPartners}
+        initial={{ opacity: 0, y: 22 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ ...entranceTransition, delay: 0.38 }}
+      >
+        <PartnerLogos language={language} />
       </motion.div>
     </section>
   );
