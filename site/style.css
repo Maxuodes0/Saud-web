@@ -43,7 +43,7 @@ a:hover, a:focus-visible { color: #9bb8d5; }
   .strips i:first-child { display: none; }
   .feature::before { animation-duration: 150s; }
   .feature { width: min(92vw,420px); height: min(29svh,236px); top: 45%; transform: translate(-50%,-50%); }
-  h1 { right: 24px; left: 24px; max-width: none; bottom: 90px; font-size: clamp(26px,7.3vw,58px); }
+  h1 { right: 24px; left: 24px; max-width: none; bottom: 90px; font-size: clamp(23px,6.4vw,52px); line-height: 1.12; }
   footer { inset-inline: 24px; }
 }
 @media (prefers-reduced-motion: reduce) { :root { --art: url('/media/still.webp'); } .feature::before { animation: none; left: 0; background-position-x: center; } }
