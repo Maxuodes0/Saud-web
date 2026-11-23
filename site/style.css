@@ -42,9 +42,19 @@ a:hover, a:focus-visible { color: #9bb8d5; }
   .strips { grid-template-columns: repeat(3,1fr); }
   .strips i:first-child { display: none; }
   .feature::before { animation-duration: 150s; }
-  .feature { width: min(92vw,420px); height: min(29svh,236px); top: 45%; transform: translate(-50%,-50%); }
-  h1 { right: 24px; left: 24px; max-width: none; bottom: 90px; font-size: clamp(23px,6.4vw,52px); line-height: 1.12; }
-  footer { inset-inline: 24px; }
+  main {
+    display: grid;
+    grid-template-rows: auto minmax(16px, 1fr) auto auto minmax(12px, .45fr) auto;
+    gap: clamp(12px, 2.5svh, 24px);
+    padding: 24px 20px max(16px, env(safe-area-inset-bottom));
+    min-height: 100svh;
+  }
+  main > header, .feature, h1, footer { position: relative; inset: auto; }
+  main > header { grid-row: 1; }
+  .feature { grid-row: 3; justify-self: center; width: min(100%,420px); height: min(29svh,236px); transform: none; }
+  h1 { grid-row: 4; max-width: none; font-size: clamp(23px,6.4vw,52px); line-height: 1.12; }
+  footer { grid-row: 6; }
+  footer a { display: inline-block; padding-block: 8px; }
 }
 @media (prefers-reduced-motion: reduce) { :root { --art: url('/media/still.webp'); } .feature::before { animation: none; left: 0; background-position-x: center; } }
 
