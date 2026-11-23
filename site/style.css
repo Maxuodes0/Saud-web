@@ -46,11 +46,8 @@ a:hover, a:focus-visible { color: #9bb8d5; }
 }
 @media (prefers-reduced-motion: reduce) { :root { --art: url('/media/still.webp'); } .feature::before { animation: none; background-position-x: center; } }
 
-:lang(ar) { font-family: "Year of the Camel", sans-serif; }
-html[dir="rtl"] h1 { line-height: 1.26; letter-spacing: normal; }
 header { left: auto; inset-inline-start: clamp(24px,4vw,42px); }
-header, .language { font-weight: 500; }
-.language { position: absolute; z-index: 2; top: clamp(22px,4vw,38px); inset-inline-end: clamp(24px,4vw,42px); color: #e3e7ec; background: #101925ca; padding: .45em 1em; border: 1px solid #ffffff30; border-radius: 2em; text-decoration: none; }
-.language:lang(en) { font-family: Erbaum,sans-serif; }
 footer a { font-family: "IBM Plex Sans Condensed",sans-serif; }
 .strips { direction: ltr; }
+
+.brand-logo { display: block; width: clamp(130px, 14vw, 195px); height: auto; }
