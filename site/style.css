@@ -20,13 +20,14 @@ main { position: relative; isolation: isolate; min-height: max(100svh, 540px); o
   position: absolute;
   inset: 0;
   --panorama-width: calc(100cqh * 14400 / 1162);
+  left: calc(-1 * var(--panorama-width));
   background: var(--art) left center / var(--panorama-width) 100% repeat-x;
   filter: brightness(.70) saturate(.72);
-  animation: panorama 32s linear infinite;
+  animation: panorama 60s linear infinite;
 }
 @keyframes panorama {
-  from { background-position-x: 0; }
-  to { background-position-x: var(--panorama-width); }
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(var(--panorama-width), 0, 0); }
 }
 .shade { background: linear-gradient(180deg,#0003 0%,transparent 14%,transparent 47%,#0009 72%,#000e 100%); }
 header { z-index: 1; position: absolute; top: clamp(22px,4vw,38px); left: clamp(24px,4vw,42px); font-size: 2rem; font-weight: 700; letter-spacing: -.07em; }
@@ -44,7 +45,7 @@ a:hover, a:focus-visible { color: #9bb8d5; }
   h1 { right: 24px; left: 24px; max-width: none; bottom: 90px; font-size: clamp(26px,7.3vw,58px); }
   footer { inset-inline: 24px; }
 }
-@media (prefers-reduced-motion: reduce) { :root { --art: url('/media/still.webp'); } .feature::before { animation: none; background-position-x: center; } }
+@media (prefers-reduced-motion: reduce) { :root { --art: url('/media/still.webp'); } .feature::before { animation: none; left: 0; background-position-x: center; } }
 
 header { left: auto; inset-inline-start: clamp(24px,4vw,42px); }
 footer a { font-family: "IBM Plex Sans Condensed",sans-serif; }
