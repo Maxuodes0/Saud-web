@@ -3,24 +3,39 @@
 @font-face { font-family: "IBM Plex Sans Condensed"; src: url("/fonts/IBMPlexSans_Condensed-Light.ttf") format("truetype"); font-weight: 300; font-display: swap; }
 :root { color-scheme: dark; --art: url('/media/sprint.webp'); }
 * { box-sizing: border-box; }
-body { font-weight: 500; margin: 0; background: #080807; color: #fff8ea; font-family: "IBM Plex Sans Condensed", Helvetica, Arial, sans-serif; }
+body { font-weight: 500; margin: 0; background: #061328; color: #f7faff; font-family: "IBM Plex Sans Condensed", Helvetica, Arial, sans-serif; }
 main { position: relative; isolation: isolate; min-height: max(100svh, 540px); overflow: hidden; }
 .strips, .shade { position: absolute; inset: 0; z-index: -1; }
 .strips { display: grid; grid-template-columns: repeat(4, 1fr); }
-.strips i, .feature { background-image: var(--art); background-size: auto 100%; background-repeat: no-repeat; }
+.strips i { background-image: var(--art); background-size: auto 100%; background-repeat: no-repeat; }
 .strips i { background-position: 4% center; border-right: 1px solid #ffffff24; }
 .strips i:nth-child(2) { background-position-x: 28%; transform: translateY(-8%); }
 .strips i:nth-child(3) { background-position-x: 53%; transform: translateY(7%); }
 .strips i:nth-child(4) { background-position-x: 97%; }
-.feature { position: absolute; z-index: 0; top: 11%; left: 50%; transform: translateX(-50%); width: min(72vw,920px); height: min(36vh,340px); border-radius: 18px; border: 1px solid #ffffff32; background-position: 66% center; box-shadow: 0 24px 70px #0008; }
+.feature { position: absolute; z-index: 0; top: 11%; left: 50%; transform: translateX(-50%); width: min(72vw,920px); height: min(36vh,340px); border-radius: 18px; border: 1px solid #ffffff32; overflow: hidden; container-type: size; box-shadow: 0 24px 70px #0008; }
+/* Travel exactly one panorama width so the repeat has no visible seam. */
+.feature::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  --panorama-width: calc(100cqh * 14400 / 1162);
+  background: var(--art) left center / var(--panorama-width) 100% repeat-x;
+  animation: panorama 32s linear infinite;
+}
+@keyframes panorama {
+  from { background-position-x: 0; }
+  to { background-position-x: var(--panorama-width); }
+}
 .shade { background: linear-gradient(180deg,#0003 0%,transparent 14%,transparent 47%,#0009 72%,#000e 100%); }
 header { z-index: 1; position: absolute; top: clamp(22px,4vw,38px); left: clamp(24px,4vw,42px); font-size: 2rem; font-weight: 700; letter-spacing: -.07em; }
-h1 { z-index: 1; position: absolute; left: 6vw; bottom: clamp(80px,8vw,110px); margin: 0; max-width: 88%; text-align: left; font-size: clamp(42px,5.5vw,90px); line-height: 1.02; letter-spacing: -.025em; text-shadow: 0 4px 28px #0009; }
-em { color: #d7aa4c; font-style: normal; }
+h1 { font-weight: 300; z-index: 1; position: absolute; left: 6vw; bottom: clamp(80px,8vw,110px); margin: 0; max-width: 88%; text-align: left; font-size: clamp(42px,5.5vw,90px); line-height: 1.02; letter-spacing: -.025em; text-shadow: 0 4px 28px #0009; }
+h1 strong { font-weight: 700; }
+.accent { color: #85beff; }
 h1 span { white-space: nowrap; font-size: .66em; }
-footer { z-index: 1; font-weight: 300; position: absolute; inset: auto 4vw 24px; color: #eee3d4; font-size: 14px; line-height: 1.5; }
+footer { z-index: 1; font-weight: 300; position: absolute; inset: auto 4vw 24px; color: #e5edff; font-size: 14px; line-height: 1.5; }
 a { font-weight: 500; color: inherit; text-underline-offset: 3px; }
-a:hover, a:focus-visible { color: #f8c870; }
+a:hover, a:focus-visible { color: #85beff; }
 @media (max-width: 900px) {
   .strips { grid-template-columns: repeat(3,1fr); }
   .strips i:first-child { display: none; }
@@ -28,4 +43,4 @@ a:hover, a:focus-visible { color: #f8c870; }
   h1 { right: 24px; left: 24px; max-width: none; bottom: 90px; font-size: clamp(36px,8vw,64px); }
   footer { inset-inline: 24px; }
 }
-@media (prefers-reduced-motion: reduce) { :root { --art: url('/media/still.webp'); } }
+@media (prefers-reduced-motion: reduce) { :root { --art: url('/media/still.webp'); } .feature::before { animation: none; background-position-x: center; } }
