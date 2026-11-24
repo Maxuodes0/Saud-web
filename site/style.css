@@ -10,7 +10,7 @@ main { position: relative; isolation: isolate; min-height: max(100svh, 540px); o
 .strips i { background-image: var(--art); background-size: auto 100%; background-repeat: no-repeat; }
 .strips i { background-position: 4% center; border-right: 1px solid #ffffff24; }
 .strips i:nth-child(2) { background-position-x: 14%; transform: translateY(-8%); }
-.strips i:nth-child(3) { background-image: var(--ceremony, url("/media/ceremony.webp")); background-size: cover; background-position: center top; transform: translateY(7%); }
+.strips i:nth-child(3) { order: -1; background-image: var(--ceremony, url("/media/ceremony.webp")); background-size: cover; background-position: center top; transform: translateY(7%); }
 .strips i:nth-child(4) { background-position-x: 34%; }
 .feature { position: absolute; z-index: 0; top: 11%; left: 50%; transform: translateX(-50%); width: min(72vw,920px); height: min(36vh,340px); border-radius: 18px; border: 1px solid #ffffff32; overflow: hidden; container-type: size; box-shadow: 0 24px 70px #0008; }
 /* Travel exactly one panorama width so the repeat has no visible seam. */
@@ -38,7 +38,7 @@ footer { text-align: center; z-index: 1; font-weight: 300; position: absolute; i
 footer a { font-weight: 700; color: inherit; text-underline-offset: 3px; }
 a:hover, a:focus-visible { color: #9bb8d5; }
 @media (max-width: 900px) {
-  .strips { grid-template-columns: 1fr 1fr 1.55fr; }
+  .strips { grid-template-columns: 1.55fr 1fr 1fr; }
   .strips i:nth-child(3) { transform: translateY(3%); }
   .strips i:last-child { display: none; }
   .feature::before { animation-duration: 210s; }
