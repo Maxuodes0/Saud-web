@@ -1,16 +1,16 @@
 @font-face { font-family: "IBM Plex Sans Condensed"; src: url("/fonts/IBMPlexSans_Condensed-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
 @font-face { font-family: "IBM Plex Sans Condensed"; src: url("/fonts/IBMPlexSans_Condensed-Medium.ttf") format("truetype"); font-weight: 500; font-display: swap; }
 @font-face { font-family: "IBM Plex Sans Condensed"; src: url("/fonts/IBMPlexSans_Condensed-Light.ttf") format("truetype"); font-weight: 300; font-display: swap; }
-:root { color-scheme: dark; --art: url('/media/sprint.webp'); }
+:root { color-scheme: dark; --art: url('/media/sprint.webp?v=new-gif'); }
 * { box-sizing: border-box; }
 body { font-weight: 500; margin: 0; background: #080e18; color: #e3e7ec; font-family: Erbaum, "IBM Plex Sans Condensed", Helvetica, Arial, sans-serif; }
 main { position: relative; isolation: isolate; min-height: max(100svh, 540px); overflow: hidden; }
 .strips, .shade { position: absolute; inset: 0; z-index: -1; }
 .strips { filter: brightness(.47) saturate(.68); display: grid; grid-template-columns: repeat(4, 1fr); }
 .strips i { background-image: var(--art); background-size: auto 100%; background-repeat: no-repeat; }
-.strips i { background-position: 4% center; border-right: 1px solid #ffffff24; }
-.strips i:nth-child(2) { background-position-x: 28%; transform: translateY(-8%); }
-.strips i:nth-child(3) { background-position-x: 53%; transform: translateY(7%); }
+.strips i { background-position: 34% center; border-right: 1px solid #ffffff24; }
+.strips i:nth-child(2) { background-position-x: 3.5%; transform: translateY(-8%); }
+.strips i:nth-child(3) { background-position-x: 13.8%; transform: translateY(7%); }
 .strips i:nth-child(4) { background-position-x: 97%; }
 .feature { position: absolute; z-index: 0; top: 11%; left: 50%; transform: translateX(-50%); width: min(72vw,920px); height: min(36vh,340px); border-radius: 18px; border: 1px solid #ffffff32; overflow: hidden; container-type: size; box-shadow: 0 24px 70px #0008; }
 /* Travel exactly one panorama width so the repeat has no visible seam. */
@@ -19,11 +19,11 @@ main { position: relative; isolation: isolate; min-height: max(100svh, 540px); o
   display: block;
   position: absolute;
   inset: 0;
-  --panorama-width: calc(100cqh * 14400 / 1162);
+  --panorama-width: calc(100cqh * 14400 / 955);
   left: calc(-1 * var(--panorama-width));
   background: var(--art) left center / var(--panorama-width) 100% repeat-x;
   filter: brightness(.70) saturate(.72);
-  animation: panorama 60s linear infinite;
+  animation: panorama 73s linear infinite;
 }
 @keyframes panorama {
   from { transform: translate3d(0, 0, 0); }
@@ -41,7 +41,7 @@ a:hover, a:focus-visible { color: #9bb8d5; }
 @media (max-width: 900px) {
   .strips { grid-template-columns: repeat(3,1fr); }
   .strips i:first-child { display: none; }
-  .feature::before { animation-duration: 150s; }
+  .feature::before { animation-duration: 183s; }
   main {
     display: grid;
     grid-template-rows: auto minmax(16px, 1fr) auto auto minmax(12px, .45fr) auto;
@@ -56,7 +56,7 @@ a:hover, a:focus-visible { color: #9bb8d5; }
   footer { grid-row: 6; }
   footer a { display: inline-block; padding-block: 8px; }
 }
-@media (prefers-reduced-motion: reduce) { :root { --art: url('/media/still.webp'); } .feature::before { animation: none; left: 0; background-position-x: center; } }
+@media (prefers-reduced-motion: reduce) { :root { --art: url('/media/still.webp?v=new-gif'); } .feature::before { animation: none; left: 0; background-position-x: center; } }
 
 header { left: auto; inset-inline-start: clamp(24px,4vw,42px); }
 footer a { font-family: "IBM Plex Sans Condensed",sans-serif; }
