@@ -12,6 +12,32 @@ main { position: relative; isolation: isolate; min-height: max(100svh, 540px); o
 .strips i:nth-child(2) { background-position-x: 3.5%; transform: translateY(-8%); }
 .strips i:nth-child(3) { background-position-x: 13.8%; transform: translateY(7%); }
 .strips i:nth-child(4) { background-position-x: 97%; }
+/* Each panel visits every shot, with staggered fades between crops. */
+@media (prefers-reduced-motion: no-preference) {
+  .strips i {
+    animation: background-shots 80s steps(1, end) infinite, shot-fade 8s ease-in-out infinite;
+    animation-delay: var(--shot-offset, -2s);
+  }
+  .strips i:nth-child(2) { --shot-offset: -19s; }
+  .strips i:nth-child(3) { --shot-offset: -44s; }
+  .strips i:nth-child(4) { --shot-offset: -69s; }
+}
+@keyframes background-shots {
+  0% { background-position-x: 4%; }
+  10% { background-position-x: 14%; }
+  20% { background-position-x: 24%; }
+  30% { background-position-x: 34%; }
+  40% { background-position-x: 42%; }
+  50% { background-position-x: 51%; }
+  60% { background-position-x: 61%; }
+  70% { background-position-x: 72%; }
+  80% { background-position-x: 84%; }
+  90% { background-position-x: 96%; }
+}
+@keyframes shot-fade {
+  0%, 100% { opacity: 0; }
+  8%, 92% { opacity: 1; }
+}
 .feature { position: absolute; z-index: 0; top: 11%; left: 50%; transform: translateX(-50%); width: min(72vw,920px); height: min(36vh,340px); border-radius: 18px; border: 1px solid #ffffff32; overflow: hidden; container-type: size; box-shadow: 0 24px 70px #0008; }
 /* Travel exactly one panorama width so the repeat has no visible seam. */
 .feature::before {
@@ -23,7 +49,7 @@ main { position: relative; isolation: isolate; min-height: max(100svh, 540px); o
   left: calc(-1 * var(--panorama-width));
   background: var(--art) left center / var(--panorama-width) 100% repeat-x;
   filter: brightness(.70) saturate(.72);
-  animation: panorama 73s linear infinite;
+  animation: panorama 85s linear infinite;
 }
 @keyframes panorama {
   from { transform: translate3d(0, 0, 0); }
@@ -41,7 +67,7 @@ a:hover, a:focus-visible { color: #9bb8d5; }
 @media (max-width: 900px) {
   .strips { grid-template-columns: repeat(3,1fr); }
   .strips i:first-child { display: none; }
-  .feature::before { animation-duration: 183s; }
+  .feature::before { animation-duration: 210s; }
   main {
     display: grid;
     grid-template-rows: auto minmax(16px, 1fr) auto auto minmax(12px, .45fr) auto;
